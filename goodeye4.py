@@ -1,3 +1,7 @@
+import subprocess
+
+!pip install pandas dask[complete] pybaseball scikit-learn optuna joblib seaborn matplotlib torch transformers tqdm unittest2 sqlite3
+
 import pandas as pd
 import sqlite3
 from pybaseball import statcast
