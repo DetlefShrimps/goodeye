@@ -1,92 +1,93 @@
 import pandas as pd
+import sqlite3
+from pybaseball import statcast
+from datetime import datetime
+import logging
+from tqdm import tqdm
 import dask.dataframe as dd
 from dask.distributed import Client
-from dask import delayed
-from pybaseball import statcast, batting_stats
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import optuna
 import joblib
-import os
-import logging
-import sqlite3
 import seaborn as sns
 import matplotlib.pyplot as plt
 import torch
 from transformers import BertModel, BertConfig, BertTokenizer, AdamW
-from tqdm import tqdm
+import os
 import unittest
 import time
-from pybaseball import cache
-cache.enable()
+
+# Initialize logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
+
+def fetch_data_for_years(start_year, end_year):
+    """Fetch data from statcast for each year from start_year to end_year."""
+    data = []
+    for year in range(start_year, end_year + 1):
+        logger.info(f"Fetching data for the year {year}...")
+        start_date = f"{year}-01-01"
+        end_date = f"{year}-12-31"
+        try:
+            year_data = statcast(start_dt=start_date, end_dt=end_date)
+            data.append(year_data)
+        except Exception as e:
+            logger.error(f"Error fetching data for year {year}: {e}")
+    return pd.concat(data, axis=0).convert_dtypes(convert_string=False)
 
 def main():
     start_time = time.time()
-
-    # Setup logging
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logger = logging.getLogger()
-
+    
     # Initialize Dask client
     client = Client(n_workers=4, threads_per_worker=2, memory_limit='14GB')
 
-    # Data Collection
     logger.info("Collecting data...")
-    with tqdm(total=2, desc="Data Collection") as pbar:
-        pitch_data = statcast(start_dt='2023-03-25', end_dt='2024-07-01')
-        pbar.update(1)
-        season_stats = batting_stats(2023, 2024)
-        pbar.update(1)
+    
+    # Define the range of years for data collection
+    start_year = 2008  # Adjust based on the earliest year supported
+    end_year = datetime.now().year
+    
+    # Fetch data
+    pitch_df = fetch_data_for_years(start_year, end_year)
     logger.info(f"Data collection completed in {time.time() - start_time:.2f} seconds")
 
-    # Data Storage
+    # Storing data in SQLite database
     storage_start_time = time.time()
     logger.info("Storing data in SQLite database...")
-    with tqdm(total=2, desc="Data Storage") as pbar:
-        conn = sqlite3.connect('mlb_data.db')
-        pitch_data.to_sql('pitch_data', conn, if_exists='replace', index=False)
-        season_stats.to_sql('season_stats', conn, if_exists='replace', index=False)
-        pbar.update(1)
-        pbar.update(1)
+    conn = sqlite3.connect('baseball_data.db')
+    pitch_df.to_sql('pitch_data', conn, if_exists='replace', index=False)
+    conn.close()
     logger.info(f"Data storage completed in {time.time() - storage_start_time:.2f} seconds")
-
+    
     # Data Preparation
     preparation_start_time = time.time()
     logger.info("Preparing data...")
-    with tqdm(total=2, desc="Data Preparation") as pbar:
-        pitch_data_df = pd.read_sql('SELECT * FROM pitch_data', conn)
-        pitch_data_df['index'] = pitch_data_df.index
-        season_stats_df = pd.read_sql('SELECT * FROM season_stats', conn)
-        season_stats_df['index'] = season_stats_df.index
+    conn = sqlite3.connect('baseball_data.db')
+    pitch_data_df = pd.read_sql('SELECT * FROM pitch_data', conn)
+    pitch_data_df['index'] = pitch_data_df.index
 
-        pitch_df = dd.from_pandas(pitch_data_df, npartitions=10)
-        season_df = dd.from_pandas(season_stats_df, npartitions=10)
-        pbar.update(1)
-        pbar.update(1)
+    pitch_df = dd.from_pandas(pitch_data_df, npartitions=10)
     logger.info(f"Data preparation completed in {time.time() - preparation_start_time:.2f} seconds")
 
-    # Feature Engineering: Create gamestate delta, supplement inputs, etc.
+    # Feature Engineering
     def create_gamestate_delta(df):
         df['gamestate_delta'] = df['balls'] - df['strikes']
         return df
 
+    def additional_feature_engineering(df):
+        df['pitch_speed_diff'] = df['release_speed'] - df['effective_speed']
+        df['pitch_location_diff'] = df['plate_x'] - df['plate_z']
+        df['pitch_count'] = df.groupby(['game_pk', 'at_bat_number']).cumcount() + 1
+        df['is_strike'] = df['events'].fillna('').apply(lambda x: 1 if x in ['strikeout', 'strike'] else 0)
+        return df
+
     logger.info("Performing feature engineering...")
-    with tqdm(total=2, desc="Feature Engineering") as pbar:
-        pitch_df = pitch_df.map_partitions(create_gamestate_delta)
-        pbar.update(1)
+    pitch_df = pitch_df.map_partitions(create_gamestate_delta)
+    pitch_df = pitch_df.map_partitions(additional_feature_engineering, meta=pitch_data_df)
 
-        def additional_feature_engineering(df):
-            df['pitch_speed_diff'] = df['release_speed'] - df['effective_speed']
-            df['pitch_location_diff'] = df['plate_x'] - df['plate_z']
-            df['pitch_count'] = df.groupby(['game_pk', 'at_bat_number']).cumcount() + 1
-            df['is_strike'] = df['events'].apply(lambda x: 1 if x in ['strikeout', 'strike'] else 0)
-            return df
-
-        pitch_df = pitch_df.map_partitions(additional_feature_engineering)
-        pbar.update(1)
-
-    # Data Visualization (Dask doesn't directly support visualization, so we convert to pandas for plotting)
+    # Data Visualization
     def visualize_data(df, column, title):
         df = df.compute()
         plt.figure(figsize=(10, 6))
@@ -97,15 +98,11 @@ def main():
         plt.show()
 
     logger.info("Visualizing data...")
-    with tqdm(total=3, desc="Data Visualization") as pbar:
-        visualize_data(pitch_df, 'gamestate_delta', 'Distribution of Gamestate Delta')
-        pbar.update(1)
-        visualize_data(pitch_df, 'pitch_speed_diff', 'Distribution of Pitch Speed Difference')
-        pbar.update(1)
-        visualize_data(pitch_df, 'pitch_location_diff', 'Distribution of Pitch Location Difference')
-        pbar.update(1)
+    visualize_data(pitch_df, 'gamestate_delta', 'Distribution of Gamestate Delta')
+    visualize_data(pitch_df, 'pitch_speed_diff', 'Distribution of Pitch Speed Difference')
+    visualize_data(pitch_df, 'pitch_location_diff', 'Distribution of Pitch Location Difference')
 
-    # Define the transformer model (similar to BERT architecture)
+    # Define the transformer model
     config = BertConfig(
         vocab_size=325,  # Number of unique gamestate deltas
         hidden_size=512,
@@ -114,11 +111,8 @@ def main():
         intermediate_size=2048
     )
     model = BertModel(config)
-
-    # Tokenizer for the transformer model
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-    # Training the model using MGM and Contrastive Learning
     def train_transformer_model(model, tokenizer, df, epochs=3, model_path='transformer_model.pth'):
         optimizer = AdamW(model.parameters(), lr=5e-5)
         if os.path.exists(model_path):
@@ -142,28 +136,28 @@ def main():
     train_transformer_model(model, tokenizer, pitch_df_pd)
 
     # Function to prepare data for a specific pitcher and batter
-    def prepare_matchup_data(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year):
-        pitcher_stats = season_df[(season_df['player'] == pitcher) & (season_df['year'] == pitcher_year)].compute()
-        batter_stats = season_df[(season_df['player'] == batter) & (season_df['year'] == batter_year)].compute()
+    def prepare_matchup_data(pitch_df, pitcher, batter, pitcher_year, batter_year):
+        pitcher_stats = pitch_df[(pitch_df['player_name'] == pitcher) & (pitch_df['game_year'] == pitcher_year)].compute()
+        batter_stats = pitch_df[(pitch_df['player_name'] == batter) & (pitch_df['game_year'] == batter_year)].compute()
 
         if pitcher_stats.empty or batter_stats.empty:
             raise ValueError("Pitcher or Batter not found for the given year")
 
-        matchup_df = pitch_df[(pitch_df['pitcher'] == pitcher_stats['player_id'].values[0]) &
-                              (pitch_df['batter'] == batter_stats['player_id'].values[0])].compute()
+        matchup_df = pitch_df[(pitch_df['pitcher'] == pitcher_stats['pitcher'].values[0]) &
+                              (pitch_df['batter'] == batter_stats['batter'].values[0])].compute()
 
         return matchup_df
 
     # Function to predict the outcome of a matchup
-    def predict_matchup(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year, model):
-        matchup_df = prepare_matchup_data(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year)
+    def predict_matchup(pitch_df, pitcher, batter, pitcher_year, batter_year, model):
+        matchup_df = prepare_matchup_data(pitch_df, pitcher, batter, pitcher_year, batter_year)
 
         if matchup_df.empty:
             logger.info("No data available for this matchup.")
             return
 
-        X_matchup = matchup_df.drop(columns=['events'])  # Replace 'events' with the actual target column
-        y_matchup = matchup_df['events']  # Replace 'events' with the actual target column
+        X_matchup = matchup_df.drop(columns=['events'])
+        y_matchup = matchup_df['events']
 
         y_pred = model.predict(X_matchup)
         accuracy = accuracy_score(y_matchup, y_pred)
@@ -175,8 +169,8 @@ def main():
         logger.info(f'Classification Report:\n{class_report}')
 
     # Split the data into training and test sets
-    X = pitch_df_pd.drop(columns=['events'])  # Replace 'events' with the actual target column
-    y = pitch_df_pd['events']  # Replace 'events' with the actual target column
+    X = pitch_df_pd.drop(columns=['events'])
+    y = pitch_df_pd['events']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Train a RandomForest model to predict game outcomes
@@ -249,7 +243,7 @@ def main():
     batter_year = 2021       # Replace with user input
 
     try:
-        predict_matchup(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year, rf_model)
+        predict_matchup(pitch_df, pitcher, batter, pitcher_year, batter_year, rf_model)
     except ValueError as e:
         logger.error(e)
 
@@ -280,7 +274,7 @@ class TestMLBDataProcessing(unittest.TestCase):
         pd.testing.assert_frame_equal(result_df, expected_df)
 
     def test_data_loading(self):
-        conn = sqlite3.connect('mlb_data.db')
+        conn = sqlite3.connect('baseball_data.db')
         self.assertTrue('pitch_data' in conn.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall())
 
     def test_model_training(self):
