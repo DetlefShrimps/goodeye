@@ -3,37 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Baseball Predictor</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MLB Matchup Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <header>
+        <img src="{{ url_for('static', filename='goodeye_10.jpeg') }}" alt="Logo" class="logo">
+        <h1>GoodEye MLB Matchup Predictor</h1>
+    </header>
     <div class="container">
-        <div class="selection" id="pitcher-selection" style="background-color: blue;">
-            <h2>Select Pitcher</h2>
-            <input type="text" id="pitcher-search" placeholder="Search for a pitcher...">
-            <div id="pitcher-dropdowns">
-                <!-- Dropdowns for team, year, and players will be populated here -->
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="pitcher">Select Pitcher:</label>
+                <select id="pitcher" name="pitcher" class="dropdown">
+                    {% for pitcher in pitchers %}
+                        <option value="{{ pitcher.player_name }}">{{ pitcher.player_name }}</option>
+                    {% endfor %}
+                </select>
             </div>
-        </div>
-
-        <button id="play-ball-button" class="play-ball">Play Ball!</button>
-
-        <div class="selection" id="batter-selection" style="background-color: red;">
-            <h2>Select Batter</h2>
-            <input type="text" id="batter-search" placeholder="Search for a batter...">
-            <div id="batter-dropdowns">
-                <!-- Dropdowns for team, year, and players will be populated here -->
+            <div class="form-group">
+                <label for="pitcher_year">Select Pitcher Year:</label>
+                <select id="pitcher_year" name="pitcher_year" class="dropdown"></select>
             </div>
-        </div>
-
-        <div id="results" class="results">
-            <h2>Results:</h2>
-            <p id="prediction"></p>
-        </div>
-
-        <button id="clear-button" class="clear-button">Clear</button>
+            <div class="form-group">
+                <label for="batter">Select Batter:</label>
+                <select id="batter" name="batter" class="dropdown">
+                    {% for batter in batters %}
+                        <option value="{{ batter.player_name }}">{{ batter.player_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="batter_year">Select Batter Year:</label>
+                <select id="batter_year" name="batter_year" class="dropdown"></select>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
     </div>
-
-    <script src="app.js"></script>
+    <footer>
+        <img src="{{ url_for('static', filename='goodeye_13.jpeg') }}" alt="Logo" class="logo-footer">
+    </footer>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
