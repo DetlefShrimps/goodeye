@@ -1,48 +1,55 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const pitcherSearch = document.getElementById('pitcher-search');
-    const batterSearch = document.getElementById('batter-search');
-    const playBallButton = document.getElementById('play-ball-button');
-    const clearButton = document.getElementById('clear-button');
-    const predictionElement = document.getElementById('prediction');
-
-    pitcherSearch.addEventListener('input', function () {
-        const query = pitcherSearch.value;
-        fetch(`/search_player?q=${query}`)
-            .then(response => response.json())
-            .then(data => {
-                // Populate search suggestions for pitchers
-                console.log(data);
-            });
+    document.getElementById('pitcher').addEventListener('change', function () {
+        fetchYears('pitcher', 'pitcher_year');
     });
 
-    batterSearch.addEventListener('input', function () {
-        const query = batterSearch.value;
-        fetch(`/search_player?q=${query}`)
-            .then(response => response.json())
-            .then(data => {
-                // Populate search suggestions for batters
-                console.log(data);
-            });
+    document.getElementById('batter').addEventListener('change', function () {
+        fetchYears('batter', 'batter_year');
     });
 
-    playBallButton.addEventListener('click', function () {
-        const pitcher = { /* get pitcher data from selection */ };
-        const batter = { /* get batter data from selection */ };
-
-        fetch('/predict', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pitcher, batter })
-        })
-        .then(response => response.json())
-        .then(data => {
-            predictionElement.textContent = data.prediction;
-        });
-    });
-
-    clearButton.addEventListener('click', function () {
-        pitcherSearch.value = '';
-        batterSearch.value = '';
-        predictionElement.textContent = '';
+    document.getElementById('prediction-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        predictOutcome();
     });
 });
+
+function fetchYears(playerType, yearDropdownId) {
+    const playerName = document.getElementById(playerType).value;
+    const yearDropdown = document.getElementById(yearDropdownId);
+
+    fetch('/get_years', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `player_name=${playerName}`
+    })
+        .then(response => response.json())
+        .then(data => {
+            yearDropdown.innerHTML = '';
+            data.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearDropdown.appendChild(option);
+            });
+        });
+}
+
+function predictOutcome() {
+    const formData = new FormData(document.getElementById('prediction-form'));
+
+    fetch('/predict', {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            const resultDiv = document.getElementById('result');
+            if (data.error) {
+                resultDiv.textContent = `Error: ${data.error}`;
+            } else {
+                resultDiv.textContent = `Prediction result: ${data.result}`;
+            }
+        });
+}
