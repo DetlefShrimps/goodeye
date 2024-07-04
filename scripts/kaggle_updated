@@ -1,0 +1,299 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "b250ecd6",
+   "metadata": {
+    "_cell_guid": "6231c7c6-bfc2-49bc-8178-3a541010743d",
+    "_uuid": "010a9588-d4b3-4331-81ce-98efc2b26cae",
+    "execution": {
+     "iopub.execute_input": "2024-06-25T21:40:40.869505Z",
+     "iopub.status.busy": "2024-06-25T21:40:40.869231Z",
+     "iopub.status.idle": "2024-06-25T21:41:04.828463Z",
+     "shell.execute_reply": "2024-06-25T21:41:04.827318Z"
+    },
+    "papermill": {
+     "duration": 23.964854,
+     "end_time": "2024-06-25T21:41:04.830888",
+     "exception": false,
+     "start_time": "2024-06-25T21:40:40.866034",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: dask[complete] in /opt/conda/lib/python3.10/site-packages (2024.5.2)\r\n",
+      "Collecting dask-ml[complete]\r\n",
+      "  Downloading dask_ml-2024.4.4-py3-none-any.whl.metadata (5.9 kB)\r\n",
+      "Requirement already satisfied: scikit-learn[complete] in /opt/conda/lib/python3.10/site-packages (1.2.2)\r\n",
+      "Requirement already satisfied: optuna[complete] in /opt/conda/lib/python3.10/site-packages (3.6.1)\r\n",
+      "Requirement already satisfied: tqdm[complete] in /opt/conda/lib/python3.10/site-packages (4.66.4)\r\n",
+      "Requirement already satisfied: joblib[complete] in /opt/conda/lib/python3.10/site-packages (1.4.2)\r\n",
+      "Collecting pybaseball[complete]\r\n",
+      "  Downloading pybaseball-2.2.7-py3-none-any.whl.metadata (11 kB)\r\n",
+      "Collecting python_mlb_statsapi[complete]\r\n",
+      "  Downloading python_mlb_statsapi-0.5.22-py3-none-any.whl.metadata (21 kB)\r\n",
+      "Requirement already satisfied: click>=8.1 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (8.1.7)\r\n",
+      "Requirement already satisfied: cloudpickle>=1.5.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (2.2.1)\r\n",
+      "Requirement already satisfied: fsspec>=2021.09.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (2024.3.1)\r\n",
+      "Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (21.3)\r\n",
+      "Requirement already satisfied: partd>=1.2.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (1.4.2)\r\n",
+      "Requirement already satisfied: pyyaml>=5.3.1 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (6.0.1)\r\n",
+      "Requirement already satisfied: toolz>=0.10.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (0.12.1)\r\n",
+      "Requirement already satisfied: importlib-metadata>=4.13.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (6.11.0)\r\n",
+      "Requirement already satisfied: pyarrow>=7.0 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (14.0.2)\r\n",
+      "Requirement already satisfied: pyarrow-hotfix in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (0.6)\r\n",
+      "Requirement already satisfied: lz4>=4.3.2 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (4.3.3)\r\n",
+      "Collecting dask-glm>=0.2.0 (from dask-ml[complete])\r\n",
+      "  Downloading dask_glm-0.3.2-py2.py3-none-any.whl.metadata (1.5 kB)\r\n",
+      "Requirement already satisfied: distributed>=2.4.0 in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (2024.1.1)\r\n",
+      "Requirement already satisfied: multipledispatch>=0.4.9 in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (1.0.0)\r\n",
+      "Requirement already satisfied: numba>=0.51.0 in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (0.58.1)\r\n",
+      "Requirement already satisfied: numpy>=1.20.0 in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (1.26.4)\r\n",
+      "Requirement already satisfied: pandas>=0.24.2 in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (2.2.1)\r\n",
+      "Requirement already satisfied: scipy in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (1.11.4)\r\n",
+      "Collecting dask-xgboost (from dask-ml[complete])\r\n",
+      "  Downloading dask_xgboost-0.2.0-py2.py3-none-any.whl.metadata (3.0 kB)\r\n",
+      "Requirement already satisfied: xgboost in /opt/conda/lib/python3.10/site-packages (from dask-ml[complete]) (2.0.3)\r\n",
+      "\u001b[33mWARNING: scikit-learn 1.2.2 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0mRequirement already satisfied: threadpoolctl>=2.0.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn[complete]) (3.2.0)\r\n",
+      "\u001b[33mWARNING: optuna 3.6.1 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0mRequirement already satisfied: alembic>=1.5.0 in /opt/conda/lib/python3.10/site-packages (from optuna[complete]) (1.13.1)\r\n",
+      "Requirement already satisfied: colorlog in /opt/conda/lib/python3.10/site-packages (from optuna[complete]) (6.8.2)\r\n",
+      "Requirement already satisfied: sqlalchemy>=1.3.0 in /opt/conda/lib/python3.10/site-packages (from optuna[complete]) (2.0.25)\r\n",
+      "\u001b[33mWARNING: tqdm 4.66.4 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0m\u001b[33mWARNING: joblib 1.4.2 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0m\u001b[33mWARNING: pybaseball 2.2.7 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0mRequirement already satisfied: beautifulsoup4>=4.4.0 in /opt/conda/lib/python3.10/site-packages (from pybaseball[complete]) (4.12.2)\r\n",
+      "Requirement already satisfied: requests>=2.18.1 in /opt/conda/lib/python3.10/site-packages (from pybaseball[complete]) (2.32.3)\r\n",
+      "Requirement already satisfied: lxml>=4.2.1 in /opt/conda/lib/python3.10/site-packages (from pybaseball[complete]) (5.2.2)\r\n",
+      "Collecting pygithub>=1.51 (from pybaseball[complete])\r\n",
+      "  Downloading PyGithub-2.3.0-py3-none-any.whl.metadata (3.8 kB)\r\n",
+      "Requirement already satisfied: matplotlib>=2.0.0 in /opt/conda/lib/python3.10/site-packages (from pybaseball[complete]) (3.7.5)\r\n",
+      "Requirement already satisfied: attrs>=20.3.0 in /opt/conda/lib/python3.10/site-packages (from pybaseball[complete]) (23.2.0)\r\n",
+      "\u001b[33mWARNING: python-mlb-statsapi 0.5.22 does not provide the extra 'complete'\u001b[0m\u001b[33m\r\n",
+      "\u001b[0mCollecting requests-mock>=1.10.0 (from python_mlb_statsapi[complete])\r\n",
+      "  Downloading requests_mock-1.12.1-py2.py3-none-any.whl.metadata (4.1 kB)\r\n",
+      "Requirement already satisfied: Mako in /opt/conda/lib/python3.10/site-packages (from alembic>=1.5.0->optuna[complete]) (1.3.5)\r\n",
+      "Requirement already satisfied: typing-extensions>=4 in /opt/conda/lib/python3.10/site-packages (from alembic>=1.5.0->optuna[complete]) (4.9.0)\r\n",
+      "Requirement already satisfied: soupsieve>1.2 in /opt/conda/lib/python3.10/site-packages (from beautifulsoup4>=4.4.0->pybaseball[complete]) (2.5)\r\n",
+      "Collecting sparse>=0.7.0 (from dask-glm>=0.2.0->dask-ml[complete])\r\n",
+      "  Downloading sparse-0.15.4-py2.py3-none-any.whl.metadata (4.5 kB)\r\n",
+      "Requirement already satisfied: dask-expr<1.2,>=1.1 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (1.1.2)\r\n",
+      "INFO: pip is looking at multiple versions of distributed to determine which version is compatible with other requirements. This could take a while.\r\n",
+      "Collecting distributed>=2.4.0 (from dask-ml[complete])\r\n",
+      "  Downloading distributed-2024.6.2-py3-none-any.whl.metadata (3.4 kB)\r\n",
+      "  Downloading distributed-2024.6.1-py3-none-any.whl.metadata (3.4 kB)\r\n",
+      "  Downloading distributed-2024.6.0-py3-none-any.whl.metadata (3.4 kB)\r\n",
+      "  Downloading distributed-2024.5.2-py3-none-any.whl.metadata (3.4 kB)\r\n",
+      "Requirement already satisfied: jinja2>=2.10.3 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (3.1.2)\r\n",
+      "Requirement already satisfied: locket>=1.0.0 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (1.0.0)\r\n",
+      "Requirement already satisfied: msgpack>=1.0.0 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (1.0.7)\r\n",
+      "Requirement already satisfied: psutil>=5.7.2 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (5.9.3)\r\n",
+      "Requirement already satisfied: sortedcontainers>=2.0.5 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (2.4.0)\r\n",
+      "Requirement already satisfied: tblib>=1.6.0 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (3.0.0)\r\n",
+      "Requirement already satisfied: tornado>=6.0.4 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (6.3.3)\r\n",
+      "Requirement already satisfied: urllib3>=1.24.3 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (1.26.18)\r\n",
+      "Requirement already satisfied: zict>=3.0.0 in /opt/conda/lib/python3.10/site-packages (from distributed>=2.4.0->dask-ml[complete]) (3.0.0)\r\n",
+      "Requirement already satisfied: zipp>=0.5 in /opt/conda/lib/python3.10/site-packages (from importlib-metadata>=4.13.0->dask[complete]) (3.17.0)\r\n",
+      "Requirement already satisfied: contourpy>=1.0.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (1.2.0)\r\n",
+      "Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (0.12.1)\r\n",
+      "Requirement already satisfied: fonttools>=4.22.0 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (4.47.0)\r\n",
+      "Requirement already satisfied: kiwisolver>=1.0.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (1.4.5)\r\n",
+      "Requirement already satisfied: pillow>=6.2.0 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (9.5.0)\r\n",
+      "Requirement already satisfied: pyparsing>=2.3.1 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (3.1.1)\r\n",
+      "Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.10/site-packages (from matplotlib>=2.0.0->pybaseball[complete]) (2.9.0.post0)\r\n",
+      "Requirement already satisfied: llvmlite<0.42,>=0.41.0dev0 in /opt/conda/lib/python3.10/site-packages (from numba>=0.51.0->dask-ml[complete]) (0.41.1)\r\n",
+      "Requirement already satisfied: pytz>=2020.1 in /opt/conda/lib/python3.10/site-packages (from pandas>=0.24.2->dask-ml[complete]) (2023.3.post1)\r\n",
+      "Requirement already satisfied: tzdata>=2022.7 in /opt/conda/lib/python3.10/site-packages (from pandas>=0.24.2->dask-ml[complete]) (2023.4)\r\n",
+      "Collecting pynacl>=1.4.0 (from pygithub>=1.51->pybaseball[complete])\r\n",
+      "  Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl.metadata (8.6 kB)\r\n",
+      "Requirement already satisfied: pyjwt>=2.4.0 in /opt/conda/lib/python3.10/site-packages (from pyjwt[crypto]>=2.4.0->pygithub>=1.51->pybaseball[complete]) (2.8.0)\r\n",
+      "Requirement already satisfied: Deprecated in /opt/conda/lib/python3.10/site-packages (from pygithub>=1.51->pybaseball[complete]) (1.2.14)\r\n",
+      "Requirement already satisfied: charset-normalizer<4,>=2 in /opt/conda/lib/python3.10/site-packages (from requests>=2.18.1->pybaseball[complete]) (3.3.2)\r\n",
+      "Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.10/site-packages (from requests>=2.18.1->pybaseball[complete]) (3.6)\r\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.10/site-packages (from requests>=2.18.1->pybaseball[complete]) (2024.2.2)\r\n",
+      "Requirement already satisfied: greenlet!=0.4.17 in /opt/conda/lib/python3.10/site-packages (from sqlalchemy>=1.3.0->optuna[complete]) (3.0.3)\r\n",
+      "Collecting xgboost (from dask-ml[complete])\r\n",
+      "  Downloading xgboost-0.90-py2.py3-none-manylinux1_x86_64.whl.metadata (3.8 kB)\r\n",
+      "Requirement already satisfied: bokeh>=2.4.2 in /opt/conda/lib/python3.10/site-packages (from dask[complete]) (3.4.1)\r\n",
+      "Requirement already satisfied: xyzservices>=2021.09.1 in /opt/conda/lib/python3.10/site-packages (from bokeh>=2.4.2->dask[complete]) (2024.4.0)\r\n",
+      "Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.10/site-packages (from jinja2>=2.10.3->distributed>=2.4.0->dask-ml[complete]) (2.1.3)\r\n",
+      "Requirement already satisfied: cryptography>=3.4.0 in /opt/conda/lib/python3.10/site-packages (from pyjwt[crypto]>=2.4.0->pygithub>=1.51->pybaseball[complete]) (41.0.7)\r\n",
+      "Requirement already satisfied: cffi>=1.4.1 in /opt/conda/lib/python3.10/site-packages (from pynacl>=1.4.0->pygithub>=1.51->pybaseball[complete]) (1.16.0)\r\n",
+      "Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib>=2.0.0->pybaseball[complete]) (1.16.0)\r\n",
+      "Requirement already satisfied: wrapt<2,>=1.10 in /opt/conda/lib/python3.10/site-packages (from Deprecated->pygithub>=1.51->pybaseball[complete]) (1.14.1)\r\n",
+      "Requirement already satisfied: pycparser in /opt/conda/lib/python3.10/site-packages (from cffi>=1.4.1->pynacl>=1.4.0->pygithub>=1.51->pybaseball[complete]) (2.21)\r\n",
+      "Downloading dask_glm-0.3.2-py2.py3-none-any.whl (13 kB)\r\n",
+      "Downloading distributed-2024.5.2-py3-none-any.whl (1.0 MB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.0/1.0 MB\u001b[0m \u001b[31m21.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading PyGithub-2.3.0-py3-none-any.whl (354 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m354.4/354.4 kB\u001b[0m \u001b[31m24.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading requests_mock-1.12.1-py2.py3-none-any.whl (27 kB)\r\n",
+      "Downloading dask_ml-2024.4.4-py3-none-any.whl (149 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m149.8/149.8 kB\u001b[0m \u001b[31m10.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading dask_xgboost-0.2.0-py2.py3-none-any.whl (14 kB)\r\n",
+      "Downloading xgboost-0.90-py2.py3-none-manylinux1_x86_64.whl (142.8 MB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m142.8/142.8 MB\u001b[0m \u001b[31m11.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading pybaseball-2.2.7-py3-none-any.whl (426 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m426.1/426.1 kB\u001b[0m \u001b[31m27.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading python_mlb_statsapi-0.5.22-py3-none-any.whl (89 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m90.0/90.0 kB\u001b[0m \u001b[31m6.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m856.7/856.7 kB\u001b[0m \u001b[31m44.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hDownloading sparse-0.15.4-py2.py3-none-any.whl (237 kB)\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m237.3/237.3 kB\u001b[0m \u001b[31m16.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25hInstalling collected packages: xgboost, sparse, requests-mock, pynacl, python_mlb_statsapi, distributed, pygithub, dask-xgboost, dask-glm, pybaseball, dask-ml\r\n",
+      "  Attempting uninstall: xgboost\r\n",
+      "    Found existing installation: xgboost 2.0.3\r\n",
+      "    Uninstalling xgboost-2.0.3:\r\n",
+      "      Successfully uninstalled xgboost-2.0.3\r\n",
+      "  Attempting uninstall: distributed\r\n",
+      "    Found existing installation: distributed 2024.1.1\r\n",
+      "    Uninstalling distributed-2024.1.1:\r\n",
+      "      Successfully uninstalled distributed-2024.1.1\r\n",
+      "\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n",
+      "tpot 0.12.1 requires xgboost>=1.1.0, but you have xgboost 0.90 which is incompatible.\r\n",
+      "rapids-dask-dependency 24.4.1a0 requires dask==2024.1.1, but you have dask 2024.5.2 which is incompatible.\r\n",
+      "rapids-dask-dependency 24.4.1a0 requires dask-expr==0.4.0, but you have dask-expr 1.1.2 which is incompatible.\r\n",
+      "rapids-dask-dependency 24.4.1a0 requires distributed==2024.1.1, but you have distributed 2024.5.2 which is incompatible.\u001b[0m\u001b[31m\r\n",
+      "\u001b[0mSuccessfully installed dask-glm-0.3.2 dask-ml-2024.4.4 dask-xgboost-0.2.0 distributed-2024.5.2 pybaseball-2.2.7 pygithub-2.3.0 pynacl-1.5.0 python_mlb_statsapi-0.5.22 requests-mock-1.12.1 sparse-0.15.4 xgboost-0.90\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install dask[complete] dask-ml[complete] scikit-learn[complete] optuna[complete] tqdm[complete] joblib[complete] pybaseball[complete] python_mlb_statsapi[complete]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "19e45845",
+   "metadata": {
+    "papermill": {
+     "duration": 0.008521,
+     "end_time": "2024-06-25T21:41:04.848362",
+     "exception": false,
+     "start_time": "2024-06-25T21:41:04.839841",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "import kagglehub\n",
+    "\n",
+    "# Download latest version\n",
+    "path = kagglehub.model_download(\"yubsogay/goodeye_optuna/scikitLearn/goodeye\")\n",
+    "\n",
+    "print(\"Path to model files:\", path)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "c7b847b9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-06-25T21:41:04.867109Z",
+     "iopub.status.busy": "2024-06-25T21:41:04.866480Z",
+     "iopub.status.idle": "2024-06-25T21:41:05.820545Z",
+     "shell.execute_reply": "2024-06-25T21:41:05.819676Z"
+    },
+    "papermill": {
+     "duration": 0.965707,
+     "end_time": "2024-06-25T21:41:05.822697",
+     "exception": false,
+     "start_time": "2024-06-25T21:41:04.856990",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "rmdir: removing directory, 'g00d3y3'\r\n",
+      "rmdir: failed to remove 'g00d3y3': No such file or directory\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "!rmdir --ignore-fail-on-non-empty -pv g00d3y3 && rm -rf g00d3y3* && pip3 install --upgrade schedule --break-system-packages && git clone https://github.com/DetlefShrimps/g00d3y3 && cd g00d3y3 && python3 ondeck.py"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "gpu",
+   "dataSources": [
+    {
+     "datasetId": 5192734,
+     "sourceId": 8665651,
+     "sourceType": "datasetVersion"
+    },
+    {
+     "datasetId": 5196133,
+     "sourceId": 8670414,
+     "sourceType": "datasetVersion"
+    },
+    {
+     "datasetId": 5250426,
+     "sourceId": 8744321,
+     "sourceType": "datasetVersion"
+    },
+    {
+     "datasetId": 5268944,
+     "sourceId": 8768414,
+     "sourceType": "datasetVersion"
+    },
+    {
+     "modelInstanceId": 56465,
+     "sourceId": 67725,
+     "sourceType": "modelInstanceVersion"
+    }
+   ],
+   "isGpuEnabled": true,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.13"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 27.896507,
+   "end_time": "2024-06-25T21:41:06.049088",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-06-25T21:40:38.152581",
+   "version": "2.5.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

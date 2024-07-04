@@ -1,0 +1,58 @@
+# Fielding Features
+
+
+# 1-10%
+rSZ
+Plays
+Range
+# 40-60%
+FSR
+Season
+Scp
+BIZ
+# 10-40%
+DPR
+IDfg
+# 90-100%
+OAA
+UZR/150
+# 0%
+OOZ
+FE
+DPS
+WP
+40-60%
+rGDP
+rPM
+Def
+FP
+# 60-90%
+60-90%
+G
+rCERA
+DPF
+SB
+RngR
+TE
+DPT
+DRS
+rSB
+DP
+90-100%
+ErrR
+Inn
+10-40%
+UZR
+rARM
+GS
+A
+PO
+CS
+E
+RZR
+1-10%
+rGFP
+PB
+0
+FRM
+ARM

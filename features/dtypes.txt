@@ -1,0 +1,2254 @@
+
+Batting Data Types:
+PO%: float64
+WAR: float64
+Swing% (sc): float64
+SH: int64
+IFH%: float64
+CTv: float64
+FA% (sc): float64
+FS% (pi): float64
+wFA (sc): float64
+SC-Z (sc): float64
+SI-X (pi): float64
+Contact%: float64
+wFA (pi): float64
+OPS: float64
+LA: float64
+Pull%: float64
+Off: float64
+Pace: float64
+CH-Z (sc): float64
+FC-X (pi): float64
+AVG: float64
+FA-Z (pi): float64
+wCH: float64
+F-Strike%: float64
+vFS (sc): float64
+2B: int64
+vSL (pi): float64
+wKC (sc): float64
+maxEV: float64
+CH-X (pi): float64
+GB%: float64
+SF: int64
+XX% (pi): float64
+PA: int64
+SC% (sc): float64
+O-Contact% (sc): float64
+CU-X (sc): float64
+vFT (sc): float64
+wCU/C (sc): float64
+HBP: int64
+vFA (pi): float64
+SL% (pi): float64
+O-Contact% (pi): float64
+O-Contact%: float64
+wSL/C (sc): float64
+K%: float64
+EP-X (sc): float64
+Zone% (pi): float64
+wGDP: float64
+G: int64
+Cent%+: int64
+CS-Z (pi): float64
+SL% (sc): float64
+ISO+: int64
+SB-Z (pi): float64
+SB-X (pi): float64
+Cent%: float64
+BABIP: float64
+FO-X (sc): float64
+vCS (pi): float64
+BB%: float64
+FBv: float64
+SFv: float64
+FA-X (pi): float64
+wFS/C (sc): float64
+Z-Contact%: float64
+SLG+: int64
+Swing%: float64
+wCU (pi): float64
+wFC (pi): float64
+Spd: float64
+HR/FB: float64
+SO: int64
+FA-X (sc): float64
+SB% (pi): float64
+wKC/C (sc): float64
+vFS (pi): float64
+wSL (sc): float64
+Lg: float64
+CB%: float64
+wFB/C: float64
+H: int64
+wKN (pi): float64
+Dol: object
+FB: int64
+O-Swing% (sc): float64
+wSI (sc): float64
+Z-Swing%: float64
+CU-Z (pi): float64
+O-Swing% (pi): float64
+Clutch: float64
+Team: object
+Pos: float64
+wCH/C: float64
+FT-X (sc): float64
+IBB: int64
+vCH (pi): float64
+wCT/C: float64
+xSLG: float64
+FO-Z (sc): float64
+RBI: int64
+AVG+: int64
+IDfg: int64
+SLv: float64
+FS-Z (sc): float64
+wRC+: int64
+CH-Z (pi): float64
+FS-X (pi): float64
+wKN/C (sc): float64
+wFS/C (pi): float64
+KN-X (pi): float64
+Contact% (pi): float64
+FC% (sc): float64
+Barrel%: float64
+wSI/C (pi): float64
+phLI: float64
+vCU (sc): float64
+AB: int64
+RAR: float64
+Med%+: int64
+Barrels: int64
+wCS (pi): float64
+OBP: float64
+GDP: int64
+BB: int64
+KC-X (sc): float64
+vFA (sc): float64
+vSC (sc): float64
+wSL: float64
+FA% (pi): float64
+vKC (sc): float64
+wCH/C (pi): float64
+BUH%: float64
+LD%: float64
+ISO: float64
+EV: float64
+wSF/C: float64
+FRM: float64
+wSC/C (sc): float64
+CH% (pi): float64
+SL%: float64
+wSI (pi): float64
+XX-Z (pi): float64
+SI-Z (pi): float64
+CU% (sc): float64
+xwOBA: float64
+Bat: float64
+IFH: int64
+vFC (pi): float64
+SF%: float64
+FT-Z (sc): float64
+Soft%+: int64
+SL-X (sc): float64
+SL-Z (pi): float64
+FB%: float64
+Age Rng: object
+KC% (sc): float64
+Z-Swing% (sc): float64
+WPA: float64
+FA-Z (sc): float64
+Hard%: float64
+SI-X (sc): float64
++WPA: float64
+wSC (sc): float64
+KC-Z (sc): float64
+SC-X (sc): float64
+Swing% (pi): float64
+SL-X (pi): float64
+wCB: float64
+GB/FB: float64
+wCH (pi): float64
+vSI (sc): float64
+Age: int64
+wFC/C (sc): float64
+Balls: int64
+-WPA: float64
+Med%: float64
+KNv: float64
+K%+: int64
+vFC (sc): float64
+UN% (sc): float64
+GB: int64
+3B: int64
+CSW%: float64
+1B: int64
+SwStr%: float64
+wFT/C (sc): float64
+wFC/C (pi): float64
+FB% (Pitch): float64
+wOBA: float64
+wSF: float64
+BUH: int64
+wCH (sc): float64
+wSB/C (pi): float64
+wCB/C: float64
+wSB: float64
+Rep: float64
+vFO (sc): float64
+BU: int64
+R: int64
+Zone% (sc): float64
+CH-X (sc): float64
+SB: int64
+wCT: float64
+vKN (sc): float64
+vSI (pi): float64
+CS-X (pi): float64
+wCS/C (pi): float64
+Zone%: float64
+L-WAR: float64
+wEP (sc): float64
+FC-Z (pi): float64
+OBP+: int64
+FC-Z (sc): float64
+Z-Contact% (sc): float64
+wRC: int64
+Hard%+: int64
+GB%+: int64
+SL-Z (sc): float64
+wSI/C (sc): float64
+BB%+: int64
+TTO%: float64
+Def: float64
+HR: int64
+CStr%: float64
+wFT (sc): float64
+wFC (sc): float64
+Pace (pi): float64
+Soft%: float64
+FB%+: int64
+Oppo%: float64
+EP% (sc): float64
+vKN (pi): float64
+vSB (pi): float64
+wFS (pi): float64
+FC% (pi): float64
+FO% (sc): float64
+PH: int64
+BABIP+: int64
+CU-X (pi): float64
+KN-Z (sc): float64
+Z-Contact% (pi): float64
+pLI: float64
+KN%: float64
+wKN: float64
+CS% (pi): float64
+Pitches: int64
+KN-Z (pi): float64
+wCH/C (sc): float64
+xBA: float64
+XX%: float64
+CBv: float64
+LD+%: float64
+HR/FB%+: int64
+Events: int64
+SI% (pi): float64
+wFA/C (pi): float64
+vXX (pi): float64
+Fld: float64
+REW: float64
+WPA/LI: float64
+SI% (sc): float64
+wKN/C: float64
+IFFB%: float64
+SLG: float64
+CU-Z (sc): float64
+FS-Z (pi): float64
+wXX (pi): float64
+UBR: float64
+Name: object
+wFB: float64
+CH%: float64
+wXX/C (pi): float64
+FS% (sc): float64
+Pull%+: int64
+FT% (sc): float64
+wSL/C: float64
+wCU/C (pi): float64
+CS: int64
+wKN (sc): float64
+wSL/C (pi): float64
+SI-Z (sc): float64
+Oppo%+: int64
+CH% (sc): float64
+FC-X (sc): float64
+CHv: float64
+LD: int64
+KN% (sc): float64
+HardHit: int64
+Z-Swing% (pi): float64
+wFA/C (sc): float64
+CU% (pi): float64
+RE24: float64
+BsR: float64
+wFS (sc): float64
+BB/K: float64
+wFO (sc): float64
+wCU (sc): float64
+HardHit%: float64
+vCH (sc): float64
+wSB (pi): float64
+vCU (pi): float64
+wRAA: float64
+KN-X (sc): float64
+wSL (pi): float64
+Season: int64
+FS-X (sc): float64
+wEP/C (sc): float64
+IFFB: int64
+vEP (sc): float64
+Contact% (sc): float64
+XX-X (pi): float64
+Strikes: int64
+wKN/C (pi): float64
+vSL (sc): float64
+wFO/C (sc): float64
+CT%: float64
+KN% (pi): float64
+O-Swing%: float64
+EP-Z (sc): float64
+
+Advanced Batting Data Types:
+date: float64
+PO%: float64
+away_team_runs: float64
+woba_denom: float64
+WAR: float64
+Swing% (sc): float64
+SH: int64
+Str: float64
+incorrect_calls: float64
+home_runs: float64
+Pulls: float64
+IFH%: float64
+balls: float64
+CTv: float64
+FA% (sc): float64
+FS% (pi): float64
+wFA (sc): float64
+SC-Z (sc): float64
+SI-X (pi): float64
+# 60-90%: float64
+StS: float64
+Contact%: float64
+H/9+: float64
+BIP-Wins: float64
+ShO: float64
+at_bat_number: float64
+wFA (pi): float64
+OPS: float64
+LA: float64
+Pull%: float64
+Loc+ CU: float64
+# 0%: float64
+average_distance: float64
+hit_distance_sc: float64
+Pit+ FC: float64
+Off: float64
+Pace: float64
+L: float64
+CH-Z (sc): float64
+FC-X (pi): float64
+AVG: float64
+bat_score: float64
+rank: float64
+PB: float64
+60-90%: float64
+ay: float64
+FA-Z (pi): float64
+wCH: float64
+F-Strike%: float64
+TE: float64
+vFS (sc): float64
+2B: int64
+rTS: float64
+vSL (pi): float64
+wKC (sc): float64
+maxEV: float64
+CH-X (pi): float64
+40-60%: float64
+GB%: float64
+SF: int64
+XX% (pi): float64
+botOvr CH: float64
+PA: int64
+K/BB: float64
+botStf FS: float64
+RngR: float64
+az: float64
+SC% (sc): float64
+O-Contact% (sc): float64
+Pit+ FS: float64
+woba_value: float64
+CU-X (sc): float64
+Loc+ SI: float64
+launch_angle: float64
+vFT (sc): float64
+inLI: float64
+wCU/C (sc): float64
+HBP: int64
+vFA (pi): float64
+SL% (pi): float64
+correct_calls_above_expected: float64
+delta_home_win_exp: float64
+O-Contact% (pi): float64
+FP: float64
+O-Contact%: float64
+E: float64
+release_speed: float64
+inning_topbot: float64
+post_away_score: float64
+botOvr KC: float64
+wSL/C (sc): float64
+release_spin_rate: float64
+K%: float64
+EP-X (sc): float64
+Zone% (pi): float64
+wGDP: float64
+botCmd CU: float64
+G: int64
+Loc+ FS: float64
+Cent%+: float64
+CS-Z (pi): float64
+UZR/150: float64
+SL% (sc): float64
+plate_z: float64
+ISO+: float64
+max_distance: float64
+year: float64
+SB-Z (pi): float64
+home_team: float64
+K/9+: float64
+spin_rate_deprecated: float64
+RS/9: float64
+SB-X (pi): float64
+release_pos_z: float64
+Cent%: float64
+release_extension: float64
+BABIP: float64
+FO-X (sc): float64
+vCS (pi): float64
+1-10%: float64
+description: float64
+accuracy_above_expected: float64
+BB%: float64
+FBv: float64
+BF: float64
+Loc+ FA: float64
+SFv: float64
+FIP: float64
+botCmd KC: float64
+LOB%: float64
+average_homerun: float64
+rCERA: float64
+FA-X (pi): float64
+wFS/C (sc): float64
+botCmd SL: float64
+Z-Contact%: float64
+rGDP: float64
+fielder_2: float64
+SLG+: float64
+Swing%: float64
+wCU (pi): float64
+UZR: float64
+batted_ball_events: float64
+id: float64
+expected_incorrect_calls: float64
+wFC (pi): float64
+GS: float64
+Dollars: float64
+Spd: float64
+HR/FB: float64
+kwERA: float64
+FE: float64
+botOvr FS: float64
+SO: int64
+FA-X (sc): float64
+Stf+ CU: float64
+SB% (pi): float64
+pitcher.1: float64
+player_name: float64
+wKC/C (sc): float64
+StL: float64
+fly_ball_line_drive_ev: float64
+vFS (pi): float64
+wSL (sc): float64
+Pit+ SI: float64
+Lg: float64
+CB%: float64
+wFB/C: float64
+H: int64
+wKN (pi): float64
+xERA: float64
+A: float64
+break_length_deprecated: float64
+Stf+ FA: float64
+Starting: float64
+Dol: float64
+FB: float64
+O-Swing% (sc): float64
+type: float64
+iso_value: float64
+wSI (sc): float64
+xFIP: float64
+Z-Swing%: float64
+swing_length: float64
+LD%+: float64
+CU-Z (pi): float64
+O-Swing% (pi): float64
+estimated_ba_using_speedangle: float64
+CG: float64
+FDP-Wins: float64
+Clutch: float64
+Team: float64
+FIP-: float64
+Pos: float64
+FSR: float64
+des: float64
+10-40%: float64
+wCH/C: float64
+FT-X (sc): float64
+IBB: int64
+botOvr: float64
+K/BB+: float64
+vCH (pi): float64
+wCT/C: float64
+xSLG: float64
+ARM: float64
+plate_x: float64
+FO-Z (sc): float64
+botStf FC: float64
+RBI: int64
+release_pos_y: float64
+#days: int64
+AVG+: float64
+IDfg: float64
+ballpark: float64
+SLv: float64
+pitches_called: float64
+FS-Z (sc): float64
+Scp: float64
+W: float64
+wRC+: float64
+CH-Z (pi): float64
+FS-X (pi): float64
+rSB: float64
+wKN/C (sc): float64
+Stf+ FS: float64
+wFS/C (pi): float64
+KN-X (pi): float64
+launch_speed_angle: float64
+Contact% (pi): float64
+Pit+ KC: float64
+FC% (sc): float64
+post_fld_score: float64
+Stf+ SI: float64
+post_bat_score: float64
+bat_speed: float64
+SO/W: float64
+Barrel%: float64
+wSI/C (pi): float64
+tfs_deprecated: float64
+pfx_x: float64
+phLI: float64
+vCU (sc): float64
+AB: int64
+RAR: float64
+# 10-40%: float64
+Med%+: float64
+Barrels: float64
+wCS (pi): float64
+hard_hit_95mph+: float64
+OBP: float64
+GDP: int64
+BB: int64
+on_1b: float64
+LOB-Wins: float64
+correct_calls: float64
+strikes: float64
+Pit+ FA: float64
+KC-X (sc): float64
+post_home_score: float64
+vFA (sc): float64
+vSC (sc): float64
+wSL: float64
+target: float64
+exLI: float64
+FA% (pi): float64
+vKC (sc): float64
+wCH/C (pi): float64
+BUH%: float64
+LD%: float64
+ISO: float64
+SO9: float64
+EV: float64
+WHIP+: float64
+launch_speed: float64
+Stf+ FO: float64
+Stf+ KC: float64
+wSF/C: float64
+botStf KC: float64
+game_year: float64
+FB% 2: float64
+FRM: float64
+wSC/C (sc): float64
+CH% (pi): float64
+rPM: float64
+SL%: float64
+OAA: float64
+wSI (pi): float64
+XX-Z (pi): float64
+estimated_woba_using_speedangle: float64
+DPF: float64
+SI-Z (pi): float64
+CU% (sc): float64
+botOvr SI: float64
+TZ: float64
+xwOBA: float64
+Bat: float64
+on_2b: float64
+IFH: float64
+vFC (pi): float64
+SF%: float64
+away_team: float64
+total_run_impact: float64
+botxRV100: float64
+FT-Z (sc): float64
+Soft%+: float64
+zone: float64
+MD: float64
+Pit+ CU: float64
+SL-X (sc): float64
+ER: float64
+SL-Z (pi): float64
+BA: float64
+FB%: float64
+Age Rng: float64
+botStf FA: float64
+barrels_batted_balls_percentage: float64
+DRS: float64
+KC% (sc): float64
+Z-Swing% (sc): float64
+WPA: float64
+FA-Z (sc): float64
+Hard%: float64
+batter: float64
+pitch_type: float64
+away_score: float64
+SI-X (sc): float64
++WPA: float64
+wSC (sc): float64
+average_ev: float64
+RA9-WAR: float64
+KC-Z (sc): float64
+home_score: float64
+Pit+ FO: float64
+SC-X (sc): float64
+vy0: float64
+feature2: float64
+Swing% (pi): float64
+player: float64
+release_pos_x: float64
+SL-X (pi): float64
+wCB: float64
+GB/FB: float64
+wCH (pi): float64
+vSI (sc): float64
+Age: int64
+game_type: float64
+Stf+ FC: float64
+wFC/C (sc): float64
+BB/9: float64
+Balls: float64
+pitch_name: float64
+fielder_7: float64
+-WPA: float64
+expected_correct_calls: float64
+Med%: float64
+KNv: float64
+K%+: float64
+botCmd FC: float64
+vFC (sc): float64
+UN% (sc): float64
+GB: float64
+3B: int64
+CSW%: float64
+1B: float64
+SwStr%: float64
+wFT/C (sc): float64
+on_3b: float64
+wFC/C (pi): float64
+FB% (Pitch): float64
+wOBA: float64
+wSF: float64
+botStf SI: float64
+fielder_6: float64
+Loc+ FO: float64
+accuracy: float64
+ErrR: float64
+total_barrels: float64
+BUH: float64
+wCH (sc): float64
+wSB/C (pi): float64
+wCB/C: float64
+BAbip: float64
+wSB: float64
+HR/9: float64
+90-100%: float64
+botOvr FC: float64
+Rep: float64
+botCmd: float64
+Pitching+: float64
+botStf CU: float64
+vFO (sc): float64
+sz_top: float64
+fielder_2.1: float64
+expected_homers: float64
+BU: float64
+R: int64
+air_density_index: float64
+Zone% (sc): float64
+CH-X (sc): float64
+strikeouts: float64
+WP: float64
+SB: int64
+Stf+ CH: float64
+wCT: float64
+gmLI: float64
+vx0: float64
+rARM: float64
+outs_when_up: float64
+E-F: float64
+vKN (sc): float64
+fielder_9: float64
+vSI (pi): float64
+sv_id: float64
+CS-X (pi): float64
+babip_value: float64
+wCS/C (pi): float64
+Loc+ KC: float64
+Zone%: float64
+DPS: float64
+L-WAR: float64
+Tm: float64
+BIZ: float64
+barrels_plate_appearance_percentage: float64
+vz0: float64
+wEP (sc): float64
+FC-Z (pi): float64
+OBP+: float64
+fielder_5: float64
+FC-Z (sc): float64
+SV: float64
+Z-Contact% (sc): float64
+Stf+ SL: float64
+wRC: float64
+inning: float64
+botCmd FS: float64
+Lev: float64
+PU: float64
+Pit+ CH: float64
+Hard%+: float64
+GB%+: float64
+SL-Z (sc): float64
+wSI/C (sc): float64
+spin_dir: float64
+OOZ: float64
+BB%+: float64
+TTO%: float64
+Def: float64
+HR: int64
+effective_speed: float64
+fielder_4: float64
+CStr%: float64
+wFT (sc): float64
+# 1-10%: float64
+wFC (sc): float64
+BB/9+: float64
+Pit+ SL: float64
+Pace (pi): float64
+mlbID: int64
+BK: float64
+sz_bot: float64
+DP: float64
+RZR: float64
+# 90-100%: float64
+Soft%: float64
+botERA: float64
+TZL: float64
+FB%+: float64
+Oppo%: float64
+EP% (sc): float64
+break_angle_deprecated: float64
+vKN (pi): float64
+umpire: float64
+Stuff+: float64
+vSB (pi): float64
+0%: float64
+away: float64
+wFS (pi): float64
+FC% (pi): float64
+Location+: float64
+FO% (sc): float64
+PH: float64
+tERA: float64
+BABIP+: float64
+CU-X (pi): float64
+KN-Z (sc): float64
+of_fielding_alignment: float64
+Z-Contact% (pi): float64
+pLI: float64
+LOB%+: float64
+actual_homers: float64
+K/9: float64
+KN%: float64
+wKN: float64
+botCmd CH: float64
+BS: float64
+botCmd SI: float64
+CS% (pi): float64
+Pitches: float64
+expected_accuracy: float64
+TBF: float64
+KN-Z (pi): float64
+wCH/C (sc): float64
+xBA: float64
+XX%: float64
+CBv: float64
+LD+%: float64
+favor_home: float64
+HR/9+: float64
+Loc+ CH: float64
+HR/FB%+: float64
+Range: float64
+pitcher: float64
+CPP: float64
+RS: float64
+delta_run_exp: float64
+DPR: float64
+Inn: float64
+altitude: float64
+Events: float64
+SI% (pi): float64
+wFA/C (pi): float64
+SIERA: float64
+game_pk: float64
+vXX (pi): float64
+Fld: float64
+REW: float64
+WPA/LI: float64
+Loc+ FC: float64
+rGFP: float64
+fld_score: float64
+hit_location: float64
+Start-IP: float64
+SI% (sc): float64
+home_team_runs: float64
+wKN/C: float64
+IFFB%: float64
+SLG: float64
+CU-Z (sc): float64
+FS-Z (pi): float64
+wXX (pi): float64
+ERA-: float64
+HLD: float64
+hard_hit_percentage: float64
+botStf CH: float64
+botStf SL: float64
+if_fielding_alignment: float64
+game_date: float64
+IP: float64
+UBR: float64
+Name: float64
+ground_ball_ev: float64
+wFB: float64
+CH%: float64
+wXX/C (pi): float64
+FS% (sc): float64
+Pull%+: float64
+FT% (sc): float64
+wSL/C: float64
+wCU/C (pi): float64
+hc_x: float64
+CS: int64
+botOvr FA: float64
+wKN (sc): float64
+wSL/C (pi): float64
+SI-Z (sc): float64
+Oppo%+: float64
+botOvr SL: float64
+consistency: float64
+xFIP-: float64
+DPT: float64
+pitch_number: float64
+CH% (sc): float64
+events: float64
+stand: float64
+FC-X (sc): float64
+RPP: float64
+CHv: float64
+LD: float64
+KN% (sc): float64
+HardHit: float64
+feature1: float64
+Z-Swing% (pi): float64
+wFA/C (sc): float64
+Pit: float64
+# 40-60%: float64
+hc_y: float64
+CU% (pi): float64
+bb_type: float64
+RE24: float64
+H/9: float64
+BsR: float64
+wFS (sc): float64
+Relief-IP: float64
+tfs_zulu_deprecated: float64
+BB/K: float64
+wFO (sc): float64
+wCU (sc): float64
+WHIP: float64
+HardHit%: float64
+vCH (sc): float64
+wSB (pi): float64
+vCU (pi): float64
+wRAA: float64
+KN-X (sc): float64
+wSL (pi): float64
+fielder_8: float64
+Season: float64
+FS-X (sc): float64
+wEP/C (sc): float64
+home: float64
+PO: float64
+pfx_z: float64
+IFFB: float64
+vEP (sc): float64
+rSZ: float64
+botCmd FA: float64
+botOvr CU: float64
+botStf: float64
+spin_axis: float64
+Contact% (sc): float64
+Relieving: float64
+max_ev: float64
+SD: float64
+XX-X (pi): float64
+p_throws: float64
+Strikes: float64
+wKN/C (pi): float64
+vSL (sc): float64
+ax: float64
+wFO/C (sc): float64
+CT%: float64
+ERA: float64
+fielder_3: float64
+KN% (pi): float64
+O-Swing%: float64
+K-BB%: float64
+sweet_spot_percentage: float64
+EP-Z (sc): float64
+hard_hit_swing_percentage: float64
+Loc+ SL: float64
+Plays: float64
+
+Pitching Data Types:
+date: float64
+PO%: float64
+away_team_runs: float64
+woba_denom: float64
+WAR: float64
+Swing% (sc): float64
+SH: float64
+Str: float64
+incorrect_calls: float64
+home_runs: float64
+Pulls: int64
+IFH%: float64
+balls: float64
+CTv: float64
+FA% (sc): float64
+FS% (pi): float64
+wFA (sc): float64
+SC-Z (sc): float64
+SI-X (pi): float64
+# 60-90%: float64
+StS: float64
+Contact%: float64
+H/9+: int64
+BIP-Wins: float64
+ShO: int64
+at_bat_number: float64
+wFA (pi): float64
+OPS: float64
+LA: float64
+Pull%: float64
+Loc+ CU: float64
+# 0%: float64
+average_distance: float64
+hit_distance_sc: float64
+Pit+ FC: float64
+Off: float64
+Pace: float64
+L: int64
+CH-Z (sc): float64
+FC-X (pi): float64
+AVG: float64
+bat_score: float64
+rank: float64
+PB: float64
+60-90%: float64
+ay: float64
+FA-Z (pi): float64
+wCH: float64
+F-Strike%: float64
+TE: float64
+vFS (sc): float64
+2B: float64
+rTS: float64
+vSL (pi): float64
+wKC (sc): float64
+maxEV: float64
+CH-X (pi): float64
+40-60%: float64
+GB%: float64
+SF: float64
+XX% (pi): float64
+botOvr CH: float64
+PA: float64
+K/BB: float64
+botStf FS: float64
+RngR: float64
+az: float64
+SC% (sc): float64
+O-Contact% (sc): float64
+Pit+ FS: float64
+woba_value: float64
+CU-X (sc): float64
+Loc+ SI: float64
+launch_angle: float64
+vFT (sc): float64
+inLI: float64
+wCU/C (sc): float64
+HBP: int64
+vFA (pi): float64
+SL% (pi): float64
+correct_calls_above_expected: float64
+delta_home_win_exp: float64
+O-Contact% (pi): float64
+FP: float64
+O-Contact%: float64
+E: float64
+release_speed: float64
+inning_topbot: float64
+post_away_score: float64
+botOvr KC: float64
+wSL/C (sc): float64
+release_spin_rate: float64
+K%: float64
+EP-X (sc): float64
+Zone% (pi): float64
+wGDP: float64
+botCmd CU: float64
+G: int64
+Loc+ FS: float64
+Cent%+: int64
+CS-Z (pi): float64
+UZR/150: float64
+SL% (sc): float64
+plate_z: float64
+ISO+: float64
+max_distance: float64
+year: float64
+SB-Z (pi): float64
+home_team: float64
+K/9+: int64
+spin_rate_deprecated: float64
+RS/9: float64
+SB-X (pi): float64
+release_pos_z: float64
+Cent%: float64
+release_extension: float64
+BABIP: float64
+FO-X (sc): float64
+vCS (pi): float64
+1-10%: float64
+description: float64
+accuracy_above_expected: float64
+BB%: float64
+FBv: float64
+BF: float64
+Loc+ FA: float64
+SFv: float64
+FIP: float64
+botCmd KC: float64
+LOB%: float64
+average_homerun: float64
+rCERA: float64
+FA-X (pi): float64
+wFS/C (sc): float64
+botCmd SL: float64
+Z-Contact%: float64
+rGDP: float64
+fielder_2: float64
+SLG+: float64
+Swing%: float64
+wCU (pi): float64
+UZR: float64
+batted_ball_events: float64
+id: float64
+expected_incorrect_calls: float64
+wFC (pi): float64
+GS: int64
+Dollars: float64
+Spd: float64
+HR/FB: float64
+kwERA: float64
+FE: float64
+botOvr FS: float64
+SO: int64
+FA-X (sc): float64
+Stf+ CU: float64
+SB% (pi): float64
+pitcher.1: float64
+player_name: float64
+wKC/C (sc): float64
+StL: float64
+fly_ball_line_drive_ev: float64
+vFS (pi): float64
+wSL (sc): float64
+Pit+ SI: float64
+Lg: float64
+CB%: float64
+wFB/C: float64
+H: int64
+wKN (pi): float64
+xERA: float64
+A: float64
+break_length_deprecated: float64
+Stf+ FA: float64
+Starting: float64
+Dol: float64
+FB: int64
+O-Swing% (sc): float64
+type: float64
+iso_value: float64
+wSI (sc): float64
+xFIP: float64
+Z-Swing%: float64
+swing_length: float64
+LD%+: int64
+CU-Z (pi): float64
+O-Swing% (pi): float64
+estimated_ba_using_speedangle: float64
+CG: int64
+FDP-Wins: float64
+Clutch: float64
+Team: float64
+FIP-: int64
+Pos: float64
+FSR: float64
+des: float64
+10-40%: float64
+wCH/C: float64
+FT-X (sc): float64
+IBB: int64
+botOvr: float64
+K/BB+: int64
+vCH (pi): float64
+wCT/C: float64
+xSLG: float64
+ARM: float64
+plate_x: float64
+FO-Z (sc): float64
+botStf FC: float64
+RBI: float64
+release_pos_y: float64
+#days: float64
+AVG+: int64
+IDfg: int64
+ballpark: float64
+SLv: float64
+pitches_called: float64
+FS-Z (sc): float64
+Scp: float64
+W: int64
+wRC+: float64
+CH-Z (pi): float64
+FS-X (pi): float64
+rSB: float64
+wKN/C (sc): float64
+Stf+ FS: float64
+wFS/C (pi): float64
+KN-X (pi): float64
+launch_speed_angle: float64
+Contact% (pi): float64
+Pit+ KC: float64
+FC% (sc): float64
+post_fld_score: float64
+Stf+ SI: float64
+post_bat_score: float64
+bat_speed: float64
+SO/W: float64
+Barrel%: float64
+wSI/C (pi): float64
+tfs_deprecated: float64
+pfx_x: float64
+phLI: float64
+vCU (sc): float64
+AB: float64
+RAR: float64
+# 10-40%: float64
+Med%+: int64
+Barrels: int64
+wCS (pi): float64
+hard_hit_95mph+: float64
+OBP: float64
+GDP: float64
+BB: int64
+on_1b: float64
+LOB-Wins: float64
+correct_calls: float64
+strikes: float64
+Pit+ FA: float64
+KC-X (sc): float64
+post_home_score: float64
+vFA (sc): float64
+vSC (sc): float64
+wSL: float64
+target: float64
+exLI: float64
+FA% (pi): float64
+vKC (sc): float64
+wCH/C (pi): float64
+BUH%: float64
+LD%: float64
+ISO: float64
+SO9: float64
+EV: float64
+WHIP+: int64
+launch_speed: float64
+Stf+ FO: float64
+Stf+ KC: float64
+wSF/C: float64
+botStf KC: float64
+game_year: float64
+FB% 2: float64
+FRM: float64
+wSC/C (sc): float64
+CH% (pi): float64
+rPM: float64
+SL%: float64
+OAA: float64
+wSI (pi): float64
+XX-Z (pi): float64
+estimated_woba_using_speedangle: float64
+DPF: float64
+SI-Z (pi): float64
+CU% (sc): float64
+botOvr SI: float64
+TZ: float64
+xwOBA: float64
+Bat: float64
+on_2b: float64
+IFH: int64
+vFC (pi): float64
+SF%: float64
+away_team: float64
+total_run_impact: float64
+botxRV100: float64
+FT-Z (sc): float64
+Soft%+: int64
+zone: float64
+MD: int64
+Pit+ CU: float64
+SL-X (sc): float64
+ER: int64
+SL-Z (pi): float64
+BA: float64
+FB%: float64
+Age Rng: float64
+botStf FA: float64
+barrels_batted_balls_percentage: float64
+DRS: float64
+KC% (sc): float64
+Z-Swing% (sc): float64
+WPA: float64
+FA-Z (sc): float64
+Hard%: float64
+batter: float64
+pitch_type: float64
+away_score: float64
+SI-X (sc): float64
++WPA: float64
+wSC (sc): float64
+average_ev: float64
+RA9-WAR: float64
+KC-Z (sc): float64
+home_score: float64
+Pit+ FO: float64
+SC-X (sc): float64
+vy0: float64
+feature2: float64
+Swing% (pi): float64
+player: float64
+release_pos_x: float64
+SL-X (pi): float64
+wCB: float64
+GB/FB: float64
+wCH (pi): float64
+vSI (sc): float64
+Age: int64
+game_type: float64
+Stf+ FC: float64
+wFC/C (sc): float64
+BB/9: float64
+Balls: int64
+pitch_name: float64
+fielder_7: float64
+-WPA: float64
+expected_correct_calls: float64
+Med%: float64
+KNv: float64
+K%+: int64
+botCmd FC: float64
+vFC (sc): float64
+UN% (sc): float64
+GB: int64
+3B: float64
+CSW%: float64
+1B: float64
+SwStr%: float64
+wFT/C (sc): float64
+on_3b: float64
+wFC/C (pi): float64
+FB% (Pitch): float64
+wOBA: float64
+wSF: float64
+botStf SI: float64
+fielder_6: float64
+Loc+ FO: float64
+accuracy: float64
+ErrR: float64
+total_barrels: float64
+BUH: int64
+wCH (sc): float64
+wSB/C (pi): float64
+wCB/C: float64
+BAbip: float64
+wSB: float64
+HR/9: float64
+90-100%: float64
+botOvr FC: float64
+Rep: float64
+botCmd: float64
+Pitching+: float64
+botStf CU: float64
+vFO (sc): float64
+sz_top: float64
+fielder_2.1: float64
+expected_homers: float64
+BU: int64
+R: int64
+air_density_index: float64
+Zone% (sc): float64
+CH-X (sc): float64
+strikeouts: float64
+WP: int64
+SB: float64
+Stf+ CH: float64
+wCT: float64
+gmLI: float64
+vx0: float64
+rARM: float64
+outs_when_up: float64
+E-F: float64
+vKN (sc): float64
+fielder_9: float64
+vSI (pi): float64
+sv_id: float64
+CS-X (pi): float64
+babip_value: float64
+wCS/C (pi): float64
+Loc+ KC: float64
+Zone%: float64
+DPS: float64
+L-WAR: float64
+Tm: float64
+BIZ: float64
+barrels_plate_appearance_percentage: float64
+vz0: float64
+wEP (sc): float64
+FC-Z (pi): float64
+OBP+: float64
+fielder_5: float64
+FC-Z (sc): float64
+SV: int64
+Z-Contact% (sc): float64
+Stf+ SL: float64
+wRC: float64
+inning: float64
+botCmd FS: float64
+Lev: float64
+PU: float64
+Pit+ CH: float64
+Hard%+: int64
+GB%+: int64
+SL-Z (sc): float64
+wSI/C (sc): float64
+spin_dir: float64
+OOZ: float64
+BB%+: int64
+TTO%: float64
+Def: float64
+HR: int64
+effective_speed: float64
+fielder_4: float64
+CStr%: float64
+wFT (sc): float64
+# 1-10%: float64
+wFC (sc): float64
+BB/9+: int64
+Pit+ SL: float64
+Pace (pi): float64
+mlbID: float64
+BK: int64
+sz_bot: float64
+DP: float64
+RZR: float64
+# 90-100%: float64
+Soft%: float64
+botERA: float64
+TZL: float64
+FB%+: int64
+Oppo%: float64
+EP% (sc): float64
+break_angle_deprecated: float64
+vKN (pi): float64
+umpire: float64
+Stuff+: float64
+vSB (pi): float64
+0%: float64
+away: float64
+wFS (pi): float64
+FC% (pi): float64
+Location+: float64
+FO% (sc): float64
+PH: float64
+tERA: float64
+BABIP+: int64
+CU-X (pi): float64
+KN-Z (sc): float64
+of_fielding_alignment: float64
+Z-Contact% (pi): float64
+pLI: float64
+LOB%+: int64
+actual_homers: float64
+K/9: float64
+KN%: float64
+wKN: float64
+botCmd CH: float64
+BS: int64
+botCmd SI: float64
+CS% (pi): float64
+Pitches: int64
+expected_accuracy: float64
+TBF: int64
+KN-Z (pi): float64
+wCH/C (sc): float64
+xBA: float64
+XX%: float64
+CBv: float64
+LD+%: float64
+favor_home: float64
+HR/9+: int64
+Loc+ CH: float64
+HR/FB%+: int64
+Range: float64
+pitcher: float64
+CPP: float64
+RS: int64
+delta_run_exp: float64
+DPR: float64
+Inn: float64
+altitude: float64
+Events: int64
+SI% (pi): float64
+wFA/C (pi): float64
+SIERA: float64
+game_pk: float64
+vXX (pi): float64
+Fld: float64
+REW: float64
+WPA/LI: float64
+Loc+ FC: float64
+rGFP: float64
+fld_score: float64
+hit_location: float64
+Start-IP: float64
+SI% (sc): float64
+home_team_runs: float64
+wKN/C: float64
+IFFB%: float64
+SLG: float64
+CU-Z (sc): float64
+FS-Z (pi): float64
+wXX (pi): float64
+ERA-: int64
+HLD: int64
+hard_hit_percentage: float64
+botStf CH: float64
+botStf SL: float64
+if_fielding_alignment: float64
+game_date: float64
+IP: float64
+UBR: float64
+Name: float64
+ground_ball_ev: float64
+wFB: float64
+CH%: float64
+wXX/C (pi): float64
+FS% (sc): float64
+Pull%+: int64
+FT% (sc): float64
+wSL/C: float64
+wCU/C (pi): float64
+hc_x: float64
+CS: float64
+botOvr FA: float64
+wKN (sc): float64
+wSL/C (pi): float64
+SI-Z (sc): float64
+Oppo%+: int64
+botOvr SL: float64
+consistency: float64
+xFIP-: int64
+DPT: float64
+pitch_number: float64
+CH% (sc): float64
+events: float64
+stand: float64
+FC-X (sc): float64
+RPP: float64
+CHv: float64
+LD: int64
+KN% (sc): float64
+HardHit: int64
+feature1: float64
+Z-Swing% (pi): float64
+wFA/C (sc): float64
+Pit: float64
+# 40-60%: float64
+hc_y: float64
+CU% (pi): float64
+bb_type: float64
+RE24: float64
+H/9: float64
+BsR: float64
+wFS (sc): float64
+Relief-IP: float64
+tfs_zulu_deprecated: float64
+BB/K: float64
+wFO (sc): float64
+wCU (sc): float64
+WHIP: float64
+HardHit%: float64
+vCH (sc): float64
+wSB (pi): float64
+vCU (pi): float64
+wRAA: float64
+KN-X (sc): float64
+wSL (pi): float64
+fielder_8: float64
+Season: int64
+FS-X (sc): float64
+wEP/C (sc): float64
+home: float64
+PO: float64
+pfx_z: float64
+IFFB: int64
+vEP (sc): float64
+rSZ: float64
+botCmd FA: float64
+botOvr CU: float64
+botStf: float64
+spin_axis: float64
+Contact% (sc): float64
+Relieving: float64
+max_ev: float64
+SD: int64
+XX-X (pi): float64
+p_throws: float64
+Strikes: int64
+wKN/C (pi): float64
+vSL (sc): float64
+ax: float64
+wFO/C (sc): float64
+CT%: float64
+ERA: float64
+fielder_3: float64
+KN% (pi): float64
+O-Swing%: float64
+K-BB%: float64
+sweet_spot_percentage: float64
+EP-Z (sc): float64
+hard_hit_swing_percentage: float64
+Loc+ SL: float64
+Plays: float64
+
+Advanced Pitching Data Types:
+date: float64
+PO%: float64
+away_team_runs: float64
+woba_denom: float64
+WAR: float64
+Swing% (sc): float64
+SH: float64
+Str: float64
+incorrect_calls: float64
+home_runs: float64
+Pulls: float64
+IFH%: float64
+balls: float64
+CTv: float64
+FA% (sc): float64
+FS% (pi): float64
+wFA (sc): float64
+SC-Z (sc): float64
+SI-X (pi): float64
+# 60-90%: float64
+StS: float64
+Contact%: float64
+H/9+: float64
+BIP-Wins: float64
+ShO: float64
+at_bat_number: float64
+wFA (pi): float64
+OPS: float64
+LA: float64
+Pull%: float64
+Loc+ CU: float64
+# 0%: float64
+average_distance: float64
+hit_distance_sc: float64
+Pit+ FC: float64
+Off: float64
+Pace: float64
+L: float64
+CH-Z (sc): float64
+FC-X (pi): float64
+AVG: float64
+bat_score: float64
+rank: float64
+PB: float64
+60-90%: float64
+ay: float64
+FA-Z (pi): float64
+wCH: float64
+F-Strike%: float64
+TE: float64
+vFS (sc): float64
+2B: int64
+rTS: float64
+vSL (pi): float64
+wKC (sc): float64
+maxEV: float64
+CH-X (pi): float64
+40-60%: float64
+GB%: float64
+SF: int64
+XX% (pi): float64
+botOvr CH: float64
+PA: float64
+K/BB: float64
+botStf FS: float64
+RngR: float64
+az: float64
+SC% (sc): float64
+O-Contact% (sc): float64
+Pit+ FS: float64
+woba_value: float64
+CU-X (sc): float64
+Loc+ SI: float64
+launch_angle: float64
+vFT (sc): float64
+inLI: float64
+wCU/C (sc): float64
+HBP: int64
+vFA (pi): float64
+SL% (pi): float64
+correct_calls_above_expected: float64
+delta_home_win_exp: float64
+O-Contact% (pi): float64
+FP: float64
+O-Contact%: float64
+E: float64
+release_speed: float64
+inning_topbot: float64
+post_away_score: float64
+botOvr KC: float64
+wSL/C (sc): float64
+release_spin_rate: float64
+K%: float64
+EP-X (sc): float64
+Zone% (pi): float64
+wGDP: float64
+botCmd CU: float64
+G: int64
+Loc+ FS: float64
+Cent%+: float64
+CS-Z (pi): float64
+UZR/150: float64
+SL% (sc): float64
+plate_z: float64
+ISO+: float64
+max_distance: float64
+year: float64
+SB-Z (pi): float64
+home_team: float64
+K/9+: float64
+spin_rate_deprecated: float64
+RS/9: float64
+SB-X (pi): float64
+release_pos_z: float64
+Cent%: float64
+release_extension: float64
+BABIP: float64
+FO-X (sc): float64
+vCS (pi): float64
+1-10%: float64
+description: float64
+accuracy_above_expected: float64
+BB%: float64
+FBv: float64
+BF: int64
+Loc+ FA: float64
+SFv: float64
+FIP: float64
+botCmd KC: float64
+LOB%: float64
+average_homerun: float64
+rCERA: float64
+FA-X (pi): float64
+wFS/C (sc): float64
+botCmd SL: float64
+Z-Contact%: float64
+rGDP: float64
+fielder_2: float64
+SLG+: float64
+Swing%: float64
+wCU (pi): float64
+UZR: float64
+batted_ball_events: float64
+id: float64
+expected_incorrect_calls: float64
+wFC (pi): float64
+GS: int64
+Dollars: float64
+Spd: float64
+HR/FB: float64
+kwERA: float64
+FE: float64
+botOvr FS: float64
+SO: int64
+FA-X (sc): float64
+Stf+ CU: float64
+SB% (pi): float64
+pitcher.1: float64
+player_name: float64
+wKC/C (sc): float64
+StL: float64
+fly_ball_line_drive_ev: float64
+vFS (pi): float64
+wSL (sc): float64
+Pit+ SI: float64
+Lg: float64
+CB%: float64
+wFB/C: float64
+H: int64
+wKN (pi): float64
+xERA: float64
+A: float64
+break_length_deprecated: float64
+Stf+ FA: float64
+Starting: float64
+Dol: float64
+FB: float64
+O-Swing% (sc): float64
+type: float64
+iso_value: float64
+wSI (sc): float64
+xFIP: float64
+Z-Swing%: float64
+swing_length: float64
+LD%+: float64
+CU-Z (pi): float64
+O-Swing% (pi): float64
+estimated_ba_using_speedangle: float64
+CG: float64
+FDP-Wins: float64
+Clutch: float64
+Team: float64
+FIP-: float64
+Pos: float64
+FSR: float64
+des: float64
+10-40%: float64
+wCH/C: float64
+FT-X (sc): float64
+IBB: int64
+botOvr: float64
+K/BB+: float64
+vCH (pi): float64
+wCT/C: float64
+xSLG: float64
+ARM: float64
+plate_x: float64
+FO-Z (sc): float64
+botStf FC: float64
+RBI: float64
+release_pos_y: float64
+#days: int64
+AVG+: float64
+IDfg: float64
+ballpark: float64
+SLv: float64
+pitches_called: float64
+FS-Z (sc): float64
+Scp: float64
+W: float64
+wRC+: float64
+CH-Z (pi): float64
+FS-X (pi): float64
+rSB: float64
+wKN/C (sc): float64
+Stf+ FS: float64
+wFS/C (pi): float64
+KN-X (pi): float64
+launch_speed_angle: float64
+Contact% (pi): float64
+Pit+ KC: float64
+FC% (sc): float64
+post_fld_score: float64
+Stf+ SI: float64
+post_bat_score: float64
+bat_speed: float64
+SO/W: float64
+Barrel%: float64
+wSI/C (pi): float64
+tfs_deprecated: float64
+pfx_x: float64
+phLI: float64
+vCU (sc): float64
+AB: int64
+RAR: float64
+# 10-40%: float64
+Med%+: float64
+Barrels: float64
+wCS (pi): float64
+hard_hit_95mph+: float64
+OBP: float64
+GDP: int64
+BB: int64
+on_1b: float64
+LOB-Wins: float64
+correct_calls: float64
+strikes: float64
+Pit+ FA: float64
+KC-X (sc): float64
+post_home_score: float64
+vFA (sc): float64
+vSC (sc): float64
+wSL: float64
+target: float64
+exLI: float64
+FA% (pi): float64
+vKC (sc): float64
+wCH/C (pi): float64
+BUH%: float64
+LD%: float64
+ISO: float64
+SO9: float64
+EV: float64
+WHIP+: float64
+launch_speed: float64
+Stf+ FO: float64
+Stf+ KC: float64
+wSF/C: float64
+botStf KC: float64
+game_year: float64
+FB% 2: float64
+FRM: float64
+wSC/C (sc): float64
+CH% (pi): float64
+rPM: float64
+SL%: float64
+OAA: float64
+wSI (pi): float64
+XX-Z (pi): float64
+estimated_woba_using_speedangle: float64
+DPF: float64
+SI-Z (pi): float64
+CU% (sc): float64
+botOvr SI: float64
+TZ: float64
+xwOBA: float64
+Bat: float64
+on_2b: float64
+IFH: float64
+vFC (pi): float64
+SF%: float64
+away_team: float64
+total_run_impact: float64
+botxRV100: float64
+FT-Z (sc): float64
+Soft%+: float64
+zone: float64
+MD: float64
+Pit+ CU: float64
+SL-X (sc): float64
+ER: int64
+SL-Z (pi): float64
+BA: float64
+FB%: float64
+Age Rng: float64
+botStf FA: float64
+barrels_batted_balls_percentage: float64
+DRS: float64
+KC% (sc): float64
+Z-Swing% (sc): float64
+WPA: float64
+FA-Z (sc): float64
+Hard%: float64
+batter: float64
+pitch_type: float64
+away_score: float64
+SI-X (sc): float64
++WPA: float64
+wSC (sc): float64
+average_ev: float64
+RA9-WAR: float64
+KC-Z (sc): float64
+home_score: float64
+Pit+ FO: float64
+SC-X (sc): float64
+vy0: float64
+feature2: float64
+Swing% (pi): float64
+player: float64
+release_pos_x: float64
+SL-X (pi): float64
+wCB: float64
+GB/FB: float64
+wCH (pi): float64
+vSI (sc): float64
+Age: int64
+game_type: float64
+Stf+ FC: float64
+wFC/C (sc): float64
+BB/9: float64
+Balls: float64
+pitch_name: float64
+fielder_7: float64
+-WPA: float64
+expected_correct_calls: float64
+Med%: float64
+KNv: float64
+K%+: float64
+botCmd FC: float64
+vFC (sc): float64
+UN% (sc): float64
+GB: float64
+3B: int64
+CSW%: float64
+1B: float64
+SwStr%: float64
+wFT/C (sc): float64
+on_3b: float64
+wFC/C (pi): float64
+FB% (Pitch): float64
+wOBA: float64
+wSF: float64
+botStf SI: float64
+fielder_6: float64
+Loc+ FO: float64
+accuracy: float64
+ErrR: float64
+total_barrels: float64
+BUH: float64
+wCH (sc): float64
+wSB/C (pi): float64
+wCB/C: float64
+BAbip: float64
+wSB: float64
+HR/9: float64
+90-100%: float64
+botOvr FC: float64
+Rep: float64
+botCmd: float64
+Pitching+: float64
+botStf CU: float64
+vFO (sc): float64
+sz_top: float64
+fielder_2.1: float64
+expected_homers: float64
+BU: float64
+R: int64
+air_density_index: float64
+Zone% (sc): float64
+CH-X (sc): float64
+strikeouts: float64
+WP: float64
+SB: int64
+Stf+ CH: float64
+wCT: float64
+gmLI: float64
+vx0: float64
+rARM: float64
+outs_when_up: float64
+E-F: float64
+vKN (sc): float64
+fielder_9: float64
+vSI (pi): float64
+sv_id: float64
+CS-X (pi): float64
+babip_value: float64
+wCS/C (pi): float64
+Loc+ KC: float64
+Zone%: float64
+DPS: float64
+L-WAR: float64
+Tm: float64
+BIZ: float64
+barrels_plate_appearance_percentage: float64
+vz0: float64
+wEP (sc): float64
+FC-Z (pi): float64
+OBP+: float64
+fielder_5: float64
+FC-Z (sc): float64
+SV: float64
+Z-Contact% (sc): float64
+Stf+ SL: float64
+wRC: float64
+inning: float64
+botCmd FS: float64
+Lev: float64
+PU: float64
+Pit+ CH: float64
+Hard%+: float64
+GB%+: float64
+SL-Z (sc): float64
+wSI/C (sc): float64
+spin_dir: float64
+OOZ: float64
+BB%+: float64
+TTO%: float64
+Def: float64
+HR: int64
+effective_speed: float64
+fielder_4: float64
+CStr%: float64
+wFT (sc): float64
+# 1-10%: float64
+wFC (sc): float64
+BB/9+: float64
+Pit+ SL: float64
+Pace (pi): float64
+mlbID: int64
+BK: float64
+sz_bot: float64
+DP: float64
+RZR: float64
+# 90-100%: float64
+Soft%: float64
+botERA: float64
+TZL: float64
+FB%+: float64
+Oppo%: float64
+EP% (sc): float64
+break_angle_deprecated: float64
+vKN (pi): float64
+umpire: float64
+Stuff+: float64
+vSB (pi): float64
+0%: float64
+away: float64
+wFS (pi): float64
+FC% (pi): float64
+Location+: float64
+FO% (sc): float64
+PH: float64
+tERA: float64
+BABIP+: float64
+CU-X (pi): float64
+KN-Z (sc): float64
+of_fielding_alignment: float64
+Z-Contact% (pi): float64
+pLI: float64
+LOB%+: float64
+actual_homers: float64
+K/9: float64
+KN%: float64
+wKN: float64
+botCmd CH: float64
+BS: float64
+botCmd SI: float64
+CS% (pi): float64
+Pitches: float64
+expected_accuracy: float64
+TBF: float64
+KN-Z (pi): float64
+wCH/C (sc): float64
+xBA: float64
+XX%: float64
+CBv: float64
+LD+%: float64
+favor_home: float64
+HR/9+: float64
+Loc+ CH: float64
+HR/FB%+: float64
+Range: float64
+pitcher: float64
+CPP: float64
+RS: float64
+delta_run_exp: float64
+DPR: float64
+Inn: float64
+altitude: float64
+Events: float64
+SI% (pi): float64
+wFA/C (pi): float64
+SIERA: float64
+game_pk: float64
+vXX (pi): float64
+Fld: float64
+REW: float64
+WPA/LI: float64
+Loc+ FC: float64
+rGFP: float64
+fld_score: float64
+hit_location: float64
+Start-IP: float64
+SI% (sc): float64
+home_team_runs: float64
+wKN/C: float64
+IFFB%: float64
+SLG: float64
+CU-Z (sc): float64
+FS-Z (pi): float64
+wXX (pi): float64
+ERA-: float64
+HLD: float64
+hard_hit_percentage: float64
+botStf CH: float64
+botStf SL: float64
+if_fielding_alignment: float64
+game_date: float64
+IP: float64
+UBR: float64
+Name: float64
+ground_ball_ev: float64
+wFB: float64
+CH%: float64
+wXX/C (pi): float64
+FS% (sc): float64
+Pull%+: float64
+FT% (sc): float64
+wSL/C: float64
+wCU/C (pi): float64
+hc_x: float64
+CS: int64
+botOvr FA: float64
+wKN (sc): float64
+wSL/C (pi): float64
+SI-Z (sc): float64
+Oppo%+: float64
+botOvr SL: float64
+consistency: float64
+xFIP-: float64
+DPT: float64
+pitch_number: float64
+CH% (sc): float64
+events: float64
+stand: float64
+FC-X (sc): float64
+RPP: float64
+CHv: float64
+LD: float64
+KN% (sc): float64
+HardHit: float64
+feature1: float64
+Z-Swing% (pi): float64
+wFA/C (sc): float64
+Pit: int64
+# 40-60%: float64
+hc_y: float64
+CU% (pi): float64
+bb_type: float64
+RE24: float64
+H/9: float64
+BsR: float64
+wFS (sc): float64
+Relief-IP: float64
+tfs_zulu_deprecated: float64
+BB/K: float64
+wFO (sc): float64
+wCU (sc): float64
+WHIP: float64
+HardHit%: float64
+vCH (sc): float64
+wSB (pi): float64
+vCU (pi): float64
+wRAA: float64
+KN-X (sc): float64
+wSL (pi): float64
+fielder_8: float64
+Season: float64
+FS-X (sc): float64
+wEP/C (sc): float64
+home: float64
+PO: int64
+pfx_z: float64
+IFFB: float64
+vEP (sc): float64
+rSZ: float64
+botCmd FA: float64
+botOvr CU: float64
+botStf: float64
+spin_axis: float64
+Contact% (sc): float64
+Relieving: float64
+max_ev: float64
+SD: float64
+XX-X (pi): float64
+p_throws: float64
+Strikes: float64
+wKN/C (pi): float64
+vSL (sc): float64
+ax: float64
+wFO/C (sc): float64
+CT%: float64
+ERA: float64
+fielder_3: float64
+KN% (pi): float64
+O-Swing%: float64
+K-BB%: float64
+sweet_spot_percentage: float64
+EP-Z (sc): float64
+hard_hit_swing_percentage: float64
+Loc+ SL: float64
+Plays: float64

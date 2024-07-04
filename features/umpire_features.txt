@@ -1,0 +1,17 @@
+# UMPIRE SCORECARD FEATURES
+
+favor_home
+home_team_runs
+consistency
+accuracy
+correct_calls_above_expected
+correct_calls
+expected_accuracy
+id
+incorrect_calls
+total_run_impact
+away_team_runs
+accuracy_above_expected
+pitches_called
+expected_correct_calls
+expected_incorrect_calls

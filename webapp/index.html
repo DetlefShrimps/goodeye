@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Baseball Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="selection" id="pitcher-selection" style="background-color: blue;">
+            <h2>Select Pitcher</h2>
+            <input type="text" id="pitcher-search" placeholder="Search for a pitcher...">
+            <div id="pitcher-dropdowns">
+                <!-- Dropdowns for team, year, and players will be populated here -->
+            </div>
+        </div>
+
+        <button id="play-ball-button" class="play-ball">Play Ball!</button>
+
+        <div class="selection" id="batter-selection" style="background-color: red;">
+            <h2>Select Batter</h2>
+            <input type="text" id="batter-search" placeholder="Search for a batter...">
+            <div id="batter-dropdowns">
+                <!-- Dropdowns for team, year, and players will be populated here -->
+            </div>
+        </div>
+
+        <div id="results" class="results">
+            <h2>Results:</h2>
+            <p id="prediction"></p>
+        </div>
+
+        <button id="clear-button" class="clear-button">Clear</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

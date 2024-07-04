@@ -1,0 +1,485 @@
+#########################################################
+########## COLUMN GLOSSARY AND DATASET MAPPING ##########
+#########################################################
+
+## COLUMN_DEFINITIONS="Description of each of the relevant columns containing non-NaN/non-zero values from the 'batting_data.csv', 'pitching_data.csv', 'fielding_data.csv', and 'umpire_scorecard.csv' datasets located in the '~/g00d3y3/data' directory"
+
+'pfx_z'="Vertical movement of the pitch, measured in feet from the catcher's perspective"
+'pLI'="Leverage Index when the player is pitching"
+'Pos'="Position of the player"
+'inLI'="Leverage Index when the player enters the game"
+'botStf SL'="Slider Stuff+ metric, measuring the quality of the pitch"
+'Stf+ CH'="Changeup Stuff+ metric"
+'K-BB%'="Strikeout rate minus walk rate"
+'FDP-Wins'="Fantasy Draft Points Wins"
+'Pulls'="Number of pulled hits"
+'SV'="Saves"
+'MD'="Measured Data"
+'botOvr SL'="Overall slider rating"
+'botCmd KC'="Command of the knuckle curve"
+'Loc+ FO'="Forkball location+"
+'botOvr FA'="Overall fastball rating"
+'botCmd FA'="Fastball command"
+'Relieving'="Indicates if the player is in a relief pitching role"
+'H/9'="Hits allowed per nine innings"
+'IP'="Innings pitched"
+'botStf'="General Stuff+ metric"
+'Stf+ KC'="Knuckle curve Stuff+ metric"
+'K/9+'="Strikeouts per nine innings adjusted for league"
+'Loc+ FC'="Cutter location+"
+'kwERA'="Strikeout and walk-adjusted ERA"
+'Stf+ SI'="Sinker Stuff+ metric"
+'botOvr FS'="Overall forkball rating"
+'tERA'="True Earned Run Average"
+'WHIP'="Walks plus hits per inning pitched"
+'xERA'="Expected Earned Run Average"
+'H/9+'="Hits allowed per nine innings adjusted for league"
+'BB/9+'="Walks allowed per nine innings adjusted for league"
+'FB% 2'="Second version of Fly Ball Percentage"
+'L'="Losses"
+'Pitching+'="Overall pitching quality metric"
+'K/BB+'="Strikeouts to walks ratio adjusted for league"
+'LD%+'="Line drive percentage adjusted for league"
+'RA9-WAR'="Wins Above Replacement based on runs allowed per nine innings"
+'K/9'="Strikeouts per nine innings"
+'ERA-'="ERA adjusted for league and ballpark"
+'BB/9'="Walks per nine innings"
+'Loc+ FS'="Forkball location+"
+'CG'="Complete games"
+'Pit+ FC'="Cutter pitching+"
+'botStf SI'="Sinker Stuff+"
+'SIERA'="Skill-Interactive Earned Run Average"
+'botOvr'="Overall performance rating"
+'Loc+ KC'="Knuckle curve location+"
+'FIP-'="Fielding Independent Pitching adjusted for league"
+'HR/9+'="Home runs allowed per nine innings adjusted for league"
+'botCmd'="Command rating"
+'Location+'="Overall location quality metric"
+'botxRV100'="Expected runs value per 100 pitches"
+'botCmd SI'="Sinker command"
+'botStf FS'="Forkball Stuff+"
+'BIP-Wins'="Wins based on balls in play"
+'Pit+ SL'="Slider pitching+"
+'HLD'="Holds"
+'Stf+ FA'="Fastball Stuff+"
+'Loc+ CU'="Curveball location+"
+'TBF'="Total batters faced"
+'botStf KC'="Knuckle curve Stuff+"
+'Pit+ CH'="Changeup pitching+"
+'botCmd FC'="Cutter command"
+'botERA'="Overall ERA"
+'Stuff+'="Overall quality metric for pitches"
+'Pit+ FA'="Fastball pitching+"
+'ShO'="Shutouts"
+'Stf+ FC'="Cutter Stuff+"
+'E-F'="Error rating"
+'LOB-Wins'="Wins based on left-on-base situations"
+'Pit+ SI'="Sinker pitching+"
+'botCmd SL'="Slider command"
+'exLI'="Expected Leverage Index"
+'botStf CH'="Changeup Stuff+"
+'xFIP-'="Expected FIP adjusted for league"
+'HR/9'="Home runs allowed per nine innings"
+'xFIP'="Expected Fielding Independent Pitching"
+'botStf CU'="Curveball Stuff+"
+'phLI'="Leverage Index when the player is pinch hitting"
+'wSB/C (pi)'="Weighted stolen base chances"
+'BB/K'="Walks to strikeouts ratio"
+'ISO'="Isolated power"
+'xSLG'="Expected Slugging Percentage"
+'Lg'="League"
+'wSB'="Weighted stolen bases"
+'xBA'="Expected Batting Average"
+'OBP'="On-base percentage"
+'PH'="Pinch hits"
+'PA'="Plate appearances"
+'OPS'="On-base plus slugging percentage"
+'Fld'="Fielding"
+'L-WAR'="WAR adjusted for league"
+'Bat'="Batting"
+'1B'="Singles"
+'SF'="Sacrifice flies"
+'wRC'="Weighted Runs Created"
+'SB-X (pi)'="Stolen bases per chance"
+'ISO+'="Isolated power adjusted for league"
+'UBR'="Ultimate base running"
+'3B'="Triples"
+'LD+%'="Line drive percentage adjusted for league"
+'Pos'="Position"
+'SLG+'="Slugging percentage adjusted for league"
+'BsR'="Base running"
+'GDP'="Grounded into double plays"
+'Off'="Offensive performance"
+'xwOBA'="Expected weighted on-base average"
+'wOBA'="Weighted on-base average"
+'SB-Z (pi)'="Stolen bases to chances ratio"
+'wSB (pi)'="Weighted stolen bases"
+'Spd'="Speed score"
+'AB'="At-bats"
+'wGDP'="Weighted grounded into double plays"
+'SH'="Sacrifice hits"
+'FB% (Pitch)'="Fly ball percentage for pitchers"
+'SB% (pi)'="Stolen base percentage"
+'wRAA'="Weighted Runs Above Average"
+'Rep'="Replacement level"
+'SLG'="Slugging percentage"
+'wRC+'="Weighted Runs Created Plus"
+'2B'="Doubles"
+'OBP+'="On-base percentage adjusted for league"
+'vSB (pi)'="Stolen base value"
+'RBI'="Runs batted in"
+'# 1-10%'="Percentage of plays in the top 10%"
+'# 60-90%'="Percentage of plays in the 60-90% range"
+'60-90%'="Percentage of plays in the 60-90% range"
+'Inn'="Innings played"
+'rSB'="Runs saved from stolen bases"
+'TE'="Total errors"
+'ARM'="Arm strength"
+'DPF'="Double play fielding"
+'RngR'="Range runs"
+'rARM'="Runs saved from arm strength"
+'90-100%'="Percentage of plays in the top 10%"
+'DRS'="Defensive Runs Saved"
+'FE'="Fielding errors"
+'UZR/150'="Ultimate Zone Rating per 150 games"
+'rGDP'="Runs saved from ground into double plays"
+'Scp'="Scoops"
+'# 0%'="Percentage of plays in the bottom 10%"
+'A'="Assists"
+'rSZ'="Runs saved from strike zone"
+'DPS'="Double play success"
+'10-40%'="Percentage of plays in the 10-40% range"
+'RZR'="Revised Zone Rating"
+'rCERA'="Runs saved from catcher ERA"
+'Range'="Range factor"
+'rPM'="Runs saved from preventing mistakes"
+'FSR'="Fan Scouting Report"
+'BIZ'="Balls in zone"
+'rGFP'="Runs saved from good fielding plays"
+'OOZ'="Out of zone plays"
+'OAA'="Outs Above Average"
+'40-60%'="Percentage of plays in the 40-60% range"
+'1-10%'="Percentage of plays in the top 10%"
+'# 40-60%'="Percentage of plays in the 40-60% range"
+'UZR'="Ultimate Zone Rating"
+'ErrR'="Error runs"
+'Plays'="Total plays"
+'FP'="Fielding percentage"
+'PB'="Passed balls"
+'# 10-40%'="Percentage of plays in the 10-40% range"
+'E'="Errors"
+'DP'="Double plays"
+'DPR'="Double play runs"
+'# 90-100%'="Percentage of plays in the top 10%"
+'DPT'="Double play total"
+'PO'="Putouts"
+'favor_home'="Indicates if the umpire's calls favored the home team"
+'home_team_runs'="Number of runs scored by the home team"
+'consistency'="Consistency of the umpire's calls"
+'accuracy'="Accuracy of the umpire's calls"
+'correct_calls_above_expected'="Number of correct calls above what was expected"
+'correct_calls'="Total number of correct calls"
+'expected_accuracy'="Expected accuracy of the umpire's calls"
+'id'="Unique identifier for the umpire"
+'incorrect_calls'="Total number of incorrect calls"
+'total_run_impact'="Total impact of the umpire's calls on the game's run outcome"
+'away_team_runs'="Number of runs scored by the away team"
+'accuracy_above_expected'="Accuracy of the umpire's calls above what was expected"
+'pitches_called'="Total number of pitches called"
+'expected_correct_calls'="Number of correct calls expected"
+'expected_incorrect_calls'="Number of incorrect calls expected"
+
+
+
+
+##################################################
+########## MAPPING COLUMNS TO DATASETS  ##########
+##################################################
+
+
+
+## $PITCHING_BATTING_FIELDING="Columns containing non-NaN/non-zero values found in the each of the 'batting_data.csv', 'pitching_data.csv', and 'fielding_data.csv' datasets found in the '~/g00d3y3/data' directory"
+
+FRM="$PITCHING, $BATTING, $FIELDING"
+IDfg="$PITCHING, $BATTING, $FIELDING"
+Season="$PITCHING, $BATTING, $FIELDING"
+G="$PITCHING, $BATTING, $FIELDING"
+
+
+
+
+
+
+## $BATTING_PITCHING="Columns containing non-NaN/non-zero values found in both the 'batting_data.csv' and 'pitching_data.csv', 'fielding_data.csv' datasets found in the '~/g00d3y3/data' directory"
+
+CH% (pi)="$PITCHING, $BATTING"
+Contact% (sc)="$PITCHING, $BATTING"
+KN% (sc)="$PITCHING, $BATTING"
+SO="$PITCHING, $BATTING"
+Z-Swing% (pi)="$PITCHING, $BATTING"
+Age="$PITCHING, $BATTING"
+wCH (sc)="$PITCHING, $BATTING"
+LD="$PITCHING, $BATTING"
+RE24="$PITCHING, $BATTING"
+wKN/C="$PITCHING, $BATTING"
+CH-Z (pi)="$PITCHING, $BATTING"
+CHv="$PITCHING, $BATTING"
+Pace="$PITCHING, $BATTING"
+FS% (pi)="$PITCHING, $BATTING"
+CH-X (sc)="$PITCHING, $BATTING"
+CH-X (pi)="$PITCHING, $BATTING"
+K%="$PITCHING, $BATTING"
+KN-X (sc)="$PITCHING, $BATTING"
+FT-X (sc)="$PITCHING, $BATTING"
+SF%="$PITCHING, $BATTING"
+SI-X (pi)="$PITCHING, $BATTING"
+SC-X (sc)="$PITCHING, $BATTING"
+FS-Z (pi)="$PITCHING, $BATTING"
+FA% (sc)="$PITCHING, $BATTING"
+IFH="$PITCHING, $BATTING"
+wSF="$PITCHING, $BATTING"
+SL-X (pi)="$PITCHING, $BATTING"
+EV="$PITCHING, $BATTING"
+KN%="$PITCHING, $BATTING"
+FA-Z (sc)="$PITCHING, $BATTING"
+FO-X (sc)="$PITCHING, $BATTING"
+-WPA="$PITCHING, $BATTING"
+Swing% (pi)="$PITCHING, $BATTING"
+AVG="$PITCHING, $BATTING"
+FO% (sc)="$PITCHING, $BATTING"
+wFC (sc)="$PITCHING, $BATTING"
+Z-Swing%="$PITCHING, $BATTING"
+HardHit%="$PITCHING, $BATTING"
+wKN="$PITCHING, $BATTING"
+FA-X (sc)="$PITCHING, $BATTING"
+GS: pitching, fielding
+Contact%="$PITCHING, $BATTING"
+HR/FB="$PITCHING, $BATTING"
+KNv="$PITCHING, $BATTING"
+Swing% (sc)="$PITCHING, $BATTING"
+wKN (pi)="$PITCHING, $BATTING"
+maxEV="$PITCHING, $BATTING"
+
+
+
+
+
+
+## $BATTING_FIELDING="Columns containing non-NaN/non-zero values found in both the 'batting_data.csv' and 'fielding_data.csv' datasets found in the '~/g00d3y3/data' directory"
+
+CS="$BATTING_FIELDING"
+
+
+
+
+
+
+## $PITCHING="Columns containing non-NaN/non-zero values found in only the '~/g00d3y3/data/pitching_data.csv' dataset"
+
+pfx_z="$PITCHING"
+pLI="$PITCHING"
+Pos="$PITCHING"
+inLI="$PITCHING"
+botStf SL="$PITCHING"
+Stf+ CH="$PITCHING"
+K-BB%="$PITCHING"
+FDP-Wins="$PITCHING"
+Pulls="$PITCHING"
+SV="$PITCHING"
+MD="$PITCHING"
+botOvr SL="$PITCHING"
+botCmd KC="$PITCHING"
+Loc+ FO="$PITCHING"
+botOvr FA="$PITCHING"
+botCmd FA="$PITCHING"
+Relieving="$PITCHING"
+H/9="$PITCHING"
+IP="$PITCHING"
+botStf="$PITCHING"
+Stf+ KC="$PITCHING"
+K/9+="$PITCHING"
+Loc+ FC="$PITCHING"
+kwERA="$PITCHING"
+Stf+ SI="$PITCHING"
+botOvr FS="$PITCHING"
+tERA="$PITCHING"
+WHIP="$PITCHING"
+xERA="$PITCHING"
+H/9+="$PITCHING"
+BB/9+="$PITCHING"
+FB% 2="$PITCHING"
+Pitching+="$PITCHING"
+K/BB+="$PITCHING"
+LD%+="$PITCHING"
+RA9-WAR="$PITCHING"
+K/9="$PITCHING"
+ERA-="$PITCHING"
+BB/9="$PITCHING"
+Loc+ FS="$PITCHING"
+CG="$PITCHING"
+Pit+ FC="$PITCHING"
+botStf SI="$PITCHING"
+SIERA="$PITCHING"
+botOvr="$PITCHING"
+Loc+ KC="$PITCHING"
+FIP-="$PITCHING"
+HR/9+="$PITCHING"
+botCmd="$PITCHING"
+Location+="$PITCHING"
+botxRV100="$PITCHING"
+botCmd SI="$PITCHING"
+botStf FS="$PITCHING"
+BIP-Wins="$PITCHING"
+Pit+ SL="$PITCHING"
+HLD="$PITCHING"
+Stf+ FA="$PITCHING"
+Loc+ CU="$PITCHING"
+TBF="$PITCHING"
+botStf KC="$PITCHING"
+Pit+ CH="$PITCHING"
+botCmd FC="$PITCHING"
+botERA="$PITCHING"
+Stuff+="$PITCHING"
+Pit+ FA="$PITCHING"
+ShO="$PITCHING"
+Stf+ FC="$PITCHING"
+E-F="$PITCHING"
+LOB-Wins="$PITCHING"
+Pit+ SI="$PITCHING"
+botCmd SL="$PITCHING"
+exLI="$PITCHING"
+botStf CH="$PITCHING"
+xFIP-="$PITCHING"
+HR/9="$PITCHING"
+xFIP="$PITCHING"
+botStf CU="$PITCHING"
+
+
+
+
+
+
+## $BATTING="Columns containing non-NaN/non-zero values found in only the '~/g00d3y3/data/batting_data.csv' dataset"
+
+phLI
+wSB/C (pi)
+BB/K
+ISO
+xSLG
+Lg
+wSB
+xBA
+OBP
+PH
+PA
+OPS
+Fld
+L-WAR
+Bat
+1B
+SF
+wRC
+SB-X (pi)
+ISO+
+UBR
+3B
+LD+%
+Pos
+SLG+
+BsR
+GDP
+Off
+xwOBA
+wOBA
+SB-Z (pi)
+wSB (pi)
+Spd
+AB
+wGDP
+SH
+FB% (Pitch)
+SB% (pi)
+wRAA
+Rep
+SLG
+wRC+
+2B
+OBP+
+vSB (pi)
+RBI
+
+
+
+
+
+
+## $FIELDING="Columns containing non-NaN/non-zero values found in only the '~/g00d3y3/data/fielding_data.csv' dataset"
+
+# 1-10%
+# 60-90%
+60-90%
+Inn
+rSB
+TE
+ARM
+DPF
+RngR
+rARM
+90-100%
+DRS
+FE
+UZR/150
+rGDP
+Scp
+# 0%
+A
+rSZ
+DPS
+10-40%
+RZR
+rCERA
+Range
+rPM
+FSR
+BIZ
+rGFP
+OOZ
+OAA
+40-60%
+1-10%
+# 40-60%
+UZR
+ErrR
+Plays
+FP
+PB
+# 10-40%
+E
+DP
+DPR
+# 90-100%
+DPT
+PO
+
+
+
+
+
+
+## $UMPIRE="Columns containing non-NaN/non-zero values found in only the ~/g00d3y3/data/umpire_scorecard.csv' dataset"
+
+favor_home
+home_team_runs
+consistency
+accuracy
+correct_calls_above_expected
+correct_calls
+expected_accuracy
+id
+incorrect_calls
+total_run_impact
+away_team_runs
+accuracy_above_expected
+pitches_called
+expected_correct_calls
+expected_incorrect_calls

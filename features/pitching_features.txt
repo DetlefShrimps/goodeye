@@ -1,0 +1,348 @@
+# PITCHING FEATURES
+
+
+pLI
+wSL/C
+wKN (pi)
+botStf
+SC-Z (sc)
+Pace
+Cent%+
+LOB%
+Stf+ FA
+SI-Z (sc)
+SwStr%
+FIP-
+Stf+ CU
+HR/FB%+
+BIP-Wins
+Pitching+
+FA-X (pi)
+Contact%
+CHv
+Zone% (pi)
+SI-Z (pi)
+LOB%+
+E-F
+H
+vFA (pi)
+CU-X (sc)
+vFC (sc)
+wFS (sc)
+AVG+
+EP-X (sc)
+vSI (sc)
+vXX (pi)
+O-Contact% (sc)
+wCH/C (pi)
+vCU (pi)
+Strikes
+Pit+ SL
+FB%+
+wSC (sc)
+Pit+ FA
+CT%
+wCT/C
+Balls
+SI-X (pi)
+H/9
+HR
+SI-X (sc)
+FC-Z (sc)
+BB/9
+wKN (sc)
+FDP-Wins
+wSI (sc)
+ER
+wKN/C (pi)
+wXX/C (pi)
+Loc+ KC
+Swing%
+Contact% (pi)
+HLD
+wSL/C (pi)
+Season
+wFC/C (sc)
+Zone%
+botCmd FC
+wKN/C
+Events
+vFS (sc)
+BK
+Contact% (sc)
+Cent%
+Pit+ CH
+IDfg
+vSL (pi)
+Loc+ CU
+SF%
+wSL
+W
+FT% (sc)
+Stf+ FS
+GB/FB
+Pit+ FS
+wCU/C (sc)
+LD%
+Relieving
+GB
+wKC/C (sc)
+Pace (pi)
+FB%
+FO-X (sc)
+Barrels
+Age
+Loc+ FS
+Clutch
+xFIP-
+K/9
+FO-Z (sc)
+TTO%
+CTv
+Stf+ KC
+FA% (pi)
+botOvr KC
+wSI/C (sc)
+SL%
+wFC/C (pi)
+KC-X (sc)
+IP
+SL-Z (sc)
+botCmd
+wCU (pi)
+wCH/C
+wFS/C (pi)
+CU-X (pi)
+botERA
+wFS (pi)
+SL-X (sc)
+wCH (sc)
+wFT/C (sc)
+FA-X (sc)
+TBF
+wEP (sc)
+IFFB
+wFC (sc)
+HBP
+SFv
+CS-Z (pi)
+WHIP+
+K%+
+vEP (sc)
+wSF/C
+IFH
+Oppo%
+WP
+wCT
+vCS (pi)
+CU-Z (sc)
+FC-X (pi)
+Soft%+
+vKC (sc)
+RS
+CH-X (sc)
+Stf+ FC
+FC-Z (pi)
+Hard%+
+wFO (sc)
+botCmd FS
+K/BB+
+Pit+ SI
+botOvr SI
+FT-X (sc)
+Loc+ FO
+LD%+
+REW
+CH-Z (pi)
+Loc+ FC
+RAR
+Swing% (sc)
+SLv
+Relief-IP
+CH-X (pi)
+FB
+FBv
+botStf FC
+RE24
+O-Contact% (pi)
+LOB-Wins
+botCmd CU
+vCU (sc)
+wFB
+Starting
+KN%
+WPA/LI
+ERA-
+wCS (pi)
+SIERA
+FS-Z (pi)
+Z-Contact%
+botOvr FA
+SL-Z (pi)
+FIP
+K/9+
+EV
+maxEV
+Stf+ FO
+Hard%
+SL% (sc)
+botOvr CU
+botCmd FA
+FC% (pi)
+botStf CU
+WHIP
+botOvr FS
+CS-X (pi)
+KC-Z (sc)
+tERA
+FC-X (sc)
+BS
+HardHit%
+Loc+ SL
+KN% (pi)
+wKN
+Stf+ SI
+BABIP+
+Oppo%+
+IFH%
+RS/9
+wCU (sc)
+HR/FB
+WPA
+CU% (sc)
+K-BB%
+wSI (pi)
+exLI
+KN-Z (sc)
+gmLI
+botStf FA
+botxRV100
+FO% (sc)
+wCH/C (sc)
+CBv
+SI% (pi)
+HardHit
+wKN/C (sc)
+Pit+ FC
+BB
+wCH
+KN-Z (pi)
+wXX (pi)
+CU-Z (pi)
+CH%
+Stf+ CH
+botOvr SL
+FA-Z (pi)
+Med%
+wCU/C (pi)
+wSL (pi)
+O-Contact%
+FS-X (sc)
+XX-Z (pi)
+H/9+
+botOvr FC
+Loc+ SI
+CG
+SO
+vKN (pi)
+MD
+botStf SI
+wFC (pi)
+R
+botOvr
+Loc+ FA
+GS
+SC% (sc)
+botCmd SL
+O-Swing% (sc)
+FA-Z (sc)
+Z-Contact% (sc)
+wSI/C (pi)
+vFT (sc)
+GB%+
+vSL (sc)
+ShO
+wFO/C (sc)
+Barrel%
+Pitches
+vFC (pi)
+O-Swing%
+botStf KC
+wSL (sc)
+Z-Contact% (pi)
+LD
+wCB/C
+wEP/C (sc)
+Pulls
+botCmd KC
+Pit+ FO
+wFA/C (sc)
+Stuff+
+vCH (sc)
+wSL/C (sc)
+CS% (pi)
+SV
+LA
+wCS/C (pi)
+botCmd SI
+Stf+ SL
+FS% (pi)
+SD
+Location+
+IBB
+SL-X (pi)
+SC-X (sc)
+wSC/C (sc)
+wFA (sc)
+botStf SL
+BB%
+Pull%+
+wFS/C (sc)
+kwERA
+XX-X (pi)
+BU
+wFB/C
+O-Swing% (pi)
+RA9-WAR
+KNv
+vSI (pi)
+Zone% (sc)
+Loc+ CH
+Swing% (pi)
+K%
+GB%
+Z-Swing% (pi)
+Pit+ CU
+FC% (sc)
+xFIP
+xERA
+vKN (sc)
+ERA
+K/BB
+CU% (pi)
+wCH (pi)
+FT-Z (sc)
+HR/9
+FS% (sc)
+KN-X (sc)
+Z-Swing% (sc)
+botStf CH
+botCmd CH
+XX%
+vFO (sc)
+FS-Z (sc)
+Med%+
+vSC (sc)
+BABIP
+vFS (pi)
+CH% (pi)
+XX% (pi)
+SL% (pi)
+KN-X (pi)
+BB%+
+Start-IP
+FB% 2
+AVG
+FRM
+BUH%
+FS-X (pi)

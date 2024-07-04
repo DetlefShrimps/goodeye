@@ -1,0 +1,314 @@
+# BATTING FEATURES
+
+pLI
+wSL/C
+wKN (pi)
+SC-Z (sc)
+Pace
+Cent%+
+SI-Z (sc)
+SwStr%
+HR/FB%+
+FA-X (pi)
+Contact%
+CHv
+Zone% (pi)
+OBP+
+SI-Z (pi)
+H
+vFA (pi)
+CU-X (sc)
+vFC (sc)
+wFS (sc)
+AVG+
+SB-Z (pi)
+EP-X (sc)
+vSI (sc)
+vXX (pi)
+O-Contact% (sc)
+wCH/C (pi)
+vCU (pi)
+Strikes
+FB%+
+wSC (sc)
+CT%
+wCT/C
+Balls
+SI-X (pi)
+HR
+SI-X (sc)
+FC-Z (sc)
+wKN (sc)
+wRC
+wSI (sc)
+wKN/C (pi)
+wXX/C (pi)
+Swing%
+Contact% (pi)
+wSL/C (pi)
+Season
+wFC/C (sc)
+Zone%
+wKN/C
+Events
+vFS (sc)
+Contact% (sc)
+Cent%
+BsR
+3B
+IDfg
+vSL (pi)
+SF%
+SB-X (pi)
+wSL
+SF
+wSB (pi)
+FT% (sc)
+GB/FB
+wCU/C (sc)
+LD%
+GB
+wKC/C (sc)
+Pace (pi)
+FB%
+FO-X (sc)
+Barrels
+Age
+Clutch
+FO-Z (sc)
+TTO%
+CTv
+FA% (pi)
+vSB (pi)
+SH
+wSI/C (sc)
+SL%
+wFC/C (pi)
+KC-X (sc)
+SL-Z (sc)
+wCU (pi)
+wCH/C
+wFS/C (pi)
+CU-X (pi)
+wOBA
+xwOBA
+wFS (pi)
+SL-X (sc)
+wCH (sc)
+SB% (pi)
+UBR
+wFT/C (sc)
+FA-X (sc)
+wEP (sc)
+IFFB
+wFC (sc)
+HBP
+SFv
+CS-Z (pi)
+K%+
+vEP (sc)
+wSF/C
+IFH
+Oppo%
+wCT
+vCS (pi)
+CU-Z (sc)
+FC-X (pi)
+Soft%+
+vKC (sc)
+CH-X (sc)
+FC-Z (pi)
+wSB
+Hard%+
+wFO (sc)
+FT-X (sc)
+Def
+REW
+xSLG
+CH-Z (pi)
+RAR
+Swing% (sc)
+SLv
+Bat
+CH-X (pi)
+FB
+FBv
+RE24
+O-Contact% (pi)
+vCU (sc)
+wFB
+wRC+
+KN%
+WPA/LI
+wCS (pi)
+FS-Z (pi)
+xBA
+EP% (sc)
+CH% (sc)
+EP-Z (sc)
+Z-Swing%
+WAR
+F-Strike%
+wGDP
+GDP
+wFT (sc)
+BUH
+CH-Z (sc)
+wSF
+G
+vCH (pi)
+IFFB%
+wKC (sc)
+Fld
+CB%
+wFA (pi)
+vFA (sc)
+CSW%
+Lg
+Soft%
+SB
+wRAA
+Pull%
+wCB
+wFA/C (pi)
+SI% (sc)
+FA% (sc)
+KN% (sc)
+CStr%
+KC% (sc)
+Z-Contact%
+SL-Z (pi)
+EV
+maxEV
+Hard%
+SL% (sc)
+OBP
+1B
+FC% (pi)
+ISO
+PA
+CS-X (pi)
+SLG+
+KC-Z (sc)
+FC-X (sc)
+wSB/C (pi)
+HardHit%
+Spd
+AB
+KN% (pi)
+OPS
+wKN
+BABIP+
+Oppo%+
+IFH%
+wCU (sc)
+HR/FB
+WPA
+CU% (sc)
+wSI (pi)
+KN-Z (sc)
+ISO+
+FO% (sc)
+wCH/C (sc)
+2B
+L-WAR
+CBv
+SI% (pi)
+HardHit
+Rep
+wKN/C (sc)
+BB
+wCH
+KN-Z (pi)
+wXX (pi)
+Off
+CU-Z (pi)
+CH%
+FA-Z (pi)
+Med%
+wCU/C (pi)
+wSL (pi)
+O-Contact%
+FS-X (sc)
+BB/K
+XX-Z (pi)
+SO
+vKN (pi)
+wFC (pi)
+R
+SC% (sc)
+O-Swing% (sc)
+FA-Z (sc)
+Z-Contact% (sc)
+wSI/C (pi)
+vFT (sc)
+GB%+
+vSL (sc)
+wFO/C (sc)
+Barrel%
+SLG
+Pitches
+vFC (pi)
+O-Swing%
+CS
+wSL (sc)
+Z-Contact% (pi)
+LD
+wCB/C
+wEP/C (sc)
+wFA/C (sc)
+Pos
+vCH (sc)
+wSL/C (sc)
+CS% (pi)
+LA
+wCS/C (pi)
+FS% (pi)
+IBB
+SL-X (pi)
+SC-X (sc)
+wSC/C (sc)
+wFA (sc)
+BB%
+Pull%+
+wFS/C (sc)
+XX-X (pi)
+BU
+wFB/C
+O-Swing% (pi)
+phLI
+KNv
+vSI (pi)
+Zone% (sc)
+Swing% (pi)
+K%
+GB%
+FB% (Pitch)
+Z-Swing% (pi)
+FC% (sc)
+vKN (sc)
+CU% (pi)
+wCH (pi)
+FT-Z (sc)
+PH
+FS% (sc)
+KN-X (sc)
+Z-Swing% (sc)
+XX%
+vFO (sc)
+FS-Z (sc)
+Med%+
+vSC (sc)
+BABIP
+vFS (pi)
+CH% (pi)
+XX% (pi)
+SL% (pi)
+RBI
+KN-X (pi)
+BB%+
+AVG
+FRM
+BUH%
+FS-X (pi)
+LD+%
