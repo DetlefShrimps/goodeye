@@ -1,54 +1,69 @@
-from flask import Flask, request, jsonify, render_template
-import pandas as pd
+from flask import Flask, render_template, request, jsonify
 import sqlite3
 import joblib
-from tqdm import tqdm
+import pandas as pd
 
 app = Flask(__name__)
 
-# Load model
-model = joblib.load('/home/g00d3y3/g00d3y3/models/xgb_model_at_bat.pkl')
-
-# Connect to SQLite database
-conn = sqlite3.connect('g00d3y3.db', check_same_thread=False)
-
-# Load player data
-player_data = pd.read_sql_query("SELECT * FROM player_name", conn)
+def get_db_connection():
+    conn = sqlite3.connect('mlb_data.db')
+    conn.row_factory = sqlite3.Row
+    return conn
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    conn = get_db_connection()
+    pitchers = conn.execute('SELECT DISTINCT player_name FROM season_stats').fetchall()
+    batters = conn.execute('SELECT DISTINCT player_name FROM season_stats').fetchall()
+    conn.close()
+    return render_template('index.html', pitchers=pitchers, batters=batters)
 
-@app.route('/search_player', methods=['GET'])
-def search_player():
-    query = request.args.get('q')
-    results = player_data[player_data['name'].str.contains(query, case=False, na=False)].to_dict('records')
-    return jsonify(results)
-
-@app.route('/get_players_by_team_year', methods=['GET'])
-def get_players_by_team_year():
-    team = request.args.get('team')
-    year = request.args.get('year')
-    players = pd.read_sql_query(f"SELECT * FROM players WHERE team = '{team}' AND year = {year}", conn).to_dict('records')
-    return jsonify(players)
+@app.route('/get_years', methods=['POST'])
+def get_years():
+    player_name = request.form['player_name']
+    conn = get_db_connection()
+    years = conn.execute('SELECT DISTINCT game_year FROM season_stats WHERE player_name = ?', (player_name,)).fetchall()
+    conn.close()
+    return jsonify([year['game_year'] for year in years])
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json()
-    batter = data['batter']
-    pitcher = data['pitcher']
-    
-    # Create input features for the model
-    features = create_features(batter, pitcher)
-    
-    # Predict the event
-    prediction = model.predict([features])
-    return jsonify({'prediction': prediction[0]})
+    pitcher = request.form['pitcher']
+    batter = request.form['batter']
+    pitcher_year = request.form['pitcher_year']
+    batter_year = request.form['batter_year']
 
-def create_features(batter, pitcher):
-    # Placeholder function to create features for the model
-    # Extract features from batter and pitcher data
-    return [batter['feature1'], pitcher['feature1'], ...]
+    model = joblib.load('random_forest_model.pkl')
+    conn = get_db_connection()
+    pitch_df = pd.read_sql('SELECT * FROM pitch_data', conn)
+    season_df = pd.read_sql('SELECT * FROM season_stats', conn)
+    conn.close()
+
+    # Implementing prediction logic here using the loaded model and data
+    def prepare_matchup_data(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year):
+        pitcher_stats = season_df[(season_df['player_name'] == pitcher) & (season_df['game_year'] == pitcher_year)]
+        batter_stats = season_df[(season_df['player_name'] == batter) & (season_df['game_year'] == batter_year)]
+
+        if pitcher_stats.empty or batter_stats.empty:
+            raise ValueError("Pitcher or Batter not found for the given year")
+
+        matchup_df = pitch_df[(pitch_df['pitcher'] == pitcher_stats['player_id'].values[0]) &
+                              (pitch_df['batter'] == batter_stats['player_id'].values[0])]
+
+        return matchup_df
+
+    try:
+        matchup_df = prepare_matchup_data(pitch_df, season_df, pitcher, batter, pitcher_year, batter_year)
+        if matchup_df.empty:
+            return jsonify({'error': 'No data available for this matchup'})
+
+        X_matchup = matchup_df.drop(columns=['events'])  # Replace 'events' with the actual target column
+        y_pred = model.predict(X_matchup)
+        result = y_pred[0]  # This will be adjusted based on the model's output
+
+        return jsonify({'result': result})
+    except ValueError as e:
+        return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)
