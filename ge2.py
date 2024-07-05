@@ -24,7 +24,14 @@ from tqdm import tqdm
 import unittest
 import time
 from pybaseball import cache
-cache.enable()
+
+# Monkey patch for pybaseball to handle FutureWarning
+#import pybaseball.datahelpers.postprocessing as postprocessing
+
+#def patched_to_datetime(column, date_format):
+#    return pd.to_datetime(column, format=date_format, errors='coerce')
+
+#postprocessing.pd.to_datetime = patched_to_datetime
 
 def main():
     start_time = time.time()
@@ -191,7 +198,7 @@ def main():
     )
     rf_model.fit(X_train, y_train)
 
-        # Cross-validation
+    # Cross-validation
     logger.info("Performing cross-validation...")
     with tqdm(total=5, desc="Cross-Validation") as pbar:
         cv_scores = cross_val_score(rf_model, X_train, y_train, cv=5)
@@ -205,7 +212,8 @@ def main():
     accuracy = accuracy_score(y_test, y_pred)
     conf_matrix = confusion_matrix(y_test, y_pred)
     class_report = classification_report(y_test, y_pred)
-    logger.info(f'Random Forest Model Accuracy: {accuracy * 100:.2f}%')
+    logger.info(f'Random Forest Model```python
+    Accuracy: {accuracy * 100:.2f}%')
     logger.info(f'Confusion Matrix:\n{conf_matrix}')
     logger.info(f'Classification Report:\n{class_report}')
 
@@ -311,3 +319,4 @@ def main():
     if __name__ == '__main__':
         main()
         unittest.main()
+
