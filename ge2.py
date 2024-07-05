@@ -1,14 +1,7 @@
 import subprocess
 import os
 
-# Install required packages
-subprocess.check_call([sys.executable, "-m", "pip", "install",
-                       "pandas", "dask[complete]", "dask-ml[complete]", 
-                       "pybaseball", "python-mlb-statsapi", "scikit-learn[complete]", 
-                       "optuna[complete]", "joblib", "seaborn", "matplotlib[complete]", 
-                       "torch[complete]", "transformers[complete]", "tqdm", "keras", 
-                       "numpy", "xgboost", "tensorRT[complete]", "tensorflow", 
-                       "schedules", "datetime", "requests", "bs4", "selenium"])
+!pip install pandas dask[complete] dask-ml[complete] pybaseball python-mlb-statsapi scikit-learn[complete] optuna[complete] joblib seaborn matplotlib[complete] torch[complete] transformers[complete] tqdm keras numpy xgboost tensorRT[complete] tensorflow schedules datetime requests bs4 selenium --break-system-packages
 
 import pandas as pd
 import dask.dataframe as dd
