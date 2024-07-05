@@ -1,3 +1,8 @@
+import subprocess
+import os
+
+!pip install pandas dask[complete] dask-ml[complete] pybaseball python-mlb-statsapi scikit-learn[complete] optuna[complete] joblib seaborn matplotlib[complete] torch[complete] transformers[complete] tqdm keras numpy xgboost tensorRT[complete] tensorflow schedules datetime requests bs4 selenium
+
 import pandas as pd
 import dask.dataframe as dd
 from dask.distributed import Client
