@@ -4,7 +4,7 @@ import subprocess
 import pandas as pd
 import dask.dataframe as dd
 from dask.distributed import Client
-from pybaseball import statcast, batting_stats
+from pybaseball import statcast, batting_stats, cache
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -20,6 +20,9 @@ from transformers import BertModel, BertConfig, BertTokenizer, AdamW
 from tqdm import tqdm
 import unittest
 import time
+
+# Enable cache for pybaseball
+cache.enable()
 
 def create_gamestate_delta(df):
     df['gamestate_delta'] = df['balls'] - df['strikes']
